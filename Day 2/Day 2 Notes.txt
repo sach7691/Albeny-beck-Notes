@@ -1,0 +1,70 @@
+Git services
+github : is the service provider and website and hold our data
+
+gitlab : service provider
+
+bitbucket: service provider
+
+GIT: Global information Tracker
+-----------------------------------
+What is git? A version control tool
+------------------------------------
+Why Git? To keep track of change versions of a project, to work with group of people in the same project, open-source tool, to reset the state/positive/restore point of any of previous state
+-------------------------------------
+what is repository? a placeholder/container where we can store shared content, act like a central storage
+-------------------------------------
+types of repository?
+1. Local repository  -> exist on a terminal /desktop
+2. remote repository -> exist on web and cloud (we say shared repository)
+------------------------------------
+Git basic commands
+
+1. git init <creates a local repo on desktop machine>
+2. git add [flags] <moves files from untrack files to staging area>
+3. git commit [flags] <takes a snapshot of current version of files/data>
+4. git remote
+5. git push
+6. git pull
+7. git status <to find out the current state of repository>
+8. git config --global user.name "sachini" <to track who commited the file>
+9. git log <to see/review all log details (commit info)>
+10. git log --oneline <display commit details in elegant way>
+
+suppose if you commited a file two time -->second commit is the latest commit or head
+-------------------------------------
+linux commands
+pwd : present working directory
+mkdir: make directory
+ls : list files except hidden files
+ls -a : all files and hidden files list, hidden files are system files->if they deleted system will be crashed 
+ls -la : list all hidden files
+touch : create a file
+cat : see the content in the file
+./ : current folder
+../ : previous folder
+-------------------------------------
+symbols in git bash
+$ : normal user / regular user
+# : super user or admin user
+~ : home directory
+--------------------------------------
+create a remote repo in github to share local folder with others
+
+give repo name ->git-demos
+select public and private -> select public
+click on create repo
+link local repo to remote repo: 
+git remote add origin <url to remote repo>
+git remote -v <check linking local to remote>
+
+git push origin master : git push <where> <what>
+
+git clone <url to remote repo> //cloning remote repo in the local machine
+
+right after cloning, if you did any modification to codes in file 1, no need to type push orgin master again,type just 
+git push 
+
+do some modification to file 1 and commit, push to remote
+comeback to local and type
+git pull
+

@@ -1,0 +1,86 @@
+mkdir : make directory
+ls : show list
+touch : create a file in a directory (ex. touch index.html, touch app.js)
+
+How to open visual studio codes:
+
+1. using atom command : Atom is a desktop application built with HTML, JavaScript, CSS, and Node.js integration.
+2. to open visual studio apps: command is code .
+
+Git repositary initilization : 
+
+git init
+
+--------------------------
+config user name and email:
+
+git config --global user.name 'sachini'
+git config --global user.email 'sach7691@gmail.com'
+------------------------------
+Add program files to git repositary -> can add one by one 
+
+git add index.html ---> we say this stage as a staging area (temporary memory). where the commit files are residing in staging area. 
+
+------------------------------------
+commit means save the content in the app which you cannot rollback again. (permenantly saving the changes you have done)
+---------------------
+shows changes to be commited files and untracked files (not added to repositary):
+git status
+
+-----------------------
+how to get out from staging area or git repository (index.html is in staging area)
+git rm --cached index.html
+
+when you execute git status, index.html goes to untrack file list
+-----------------------
+how to remove a file
+
+rm <file name>
+
+-------------------------
+how to add all the untracked files to git repository ( staging area)
+
+git add *.html --> add all html files
+git add *.css
+git add *.js
+
+git add . ----> add all files despite of extention
+----------------
+commit files
+
+git commit --> this will open a vim, there you have to insert a message to identify the reason for commit, and then save vim and come out from vim.
+
+or else
+
+commit by skipping vim editing (easy way)
+
+git commit -m 'message to track the change' ----> git commit -m 'edited app.js' 
+
+---------------
+there are some files, which are no need to add to repositary or staging area (such as log files), they can be stored in a ignore file. when we execute commit those files, will not affected by the commit. ignore file is a seperate area.
+
+how to create a git ignore file
+
+touch -gitignore
+
+inside the gitignore file include the file names that should not add to repository (inside gitignore type -> 
+123.txt ->file
+/dir1 ->directory
+
+return to cmd and see status, you see gitignore in untracked.
+
+add it to stagining and commit
+-----------------------
+how to create branches (shopping cart,login function,enter products,update)
+
+git branch login -->this is in the master branch
+
+how to switch login branch 
+
+git checkout login (branches created logically, you cannot see physically)
+-----------------------------------
+merge login and master branch ( at the end of a project all branches must merge)
+
+be in the master branch and execute following
+git merge login
+

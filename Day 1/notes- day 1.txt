@@ -1,0 +1,62 @@
+BA: Communication with clients, enduser, analyze requirements, understand functional requiements, make sure no ambiguous requirements
+
+There are techinical BA as well. with technical understanding you can be a technical BA.
+
+Developers: 
+As agile practices we should have the flexibility to change our field if client wants -> embraces the change
+
+Build the code
+
+DevOps: 
+They are not developers, they automate test processes, sometimes they play as PM or BA.
+
+write less code compare dto developers. poewer shell, shell scripting or python.
+
+Deploy app on sever.
+
+bug fixing, testing and releasing.
+Site reliable engineer (software resilient engineer) focuses on reliability
+
+In devops: infinite symbol shows continous process of plan,code build, test,relese, deploy, operate monitor  again join plan
+
+devops is not a technology, it is a practice
+
+devops helps to speed up the dev process.
+
+Tester:
+
+Find the bugs in the codes.
+
+Security : non- functional requirement. test automation  everything functional. not every tester and developer is good at security aspects.
+ 
+Production support: responsible for live application
+
+Agile: you miss the deadline due to some change request. 
+
+Production server can be a sandbox
+Sandboxing technology uses virtual servers to test software in an isolated environment.
+
+An information silo is an information management system that is unable to freely communicate with other information management systems. Communication within an information silo is always vertical, making it difficult or impossible for the system to work with unrelated systems.
+
+cloud : pay as you go, on- demand
+
+A blue chip is stock in a stock corporation with a national reputation for quality, reliability, and the ability to operate profitably in good and bad times.
+
+The term "blue chip" comes from the game of poker, where blue chips are the highest value pieces. A company must be well-known, well-established, and well-capitalized to be a blue chip. Membership in certain stock indexes is important for determining blue chip status.
+
+
+UAT: User Acceptance Testing
+
+
+
+
+
+
+
+
+
+
+
+
+
+
