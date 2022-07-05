@@ -1,0 +1,54 @@
+to execute sql commands in the cmd prompt, and type following
+
+cd xampp
+cd mysql
+cd bin
+mysql -u root -p
+enter password
+
+SHOW DATABASE
+-> ;
+
+----------------------------
+commands
+
+SHOW table : show the existing tables
+------------------
+DESCRIBE <table name> : show the fields,type of the field, keys etc of the product table./can see the structure of the table
+-------------------
+SELECT COL1,COL2 FROM <TABLE NAME>
+-------------------
+SELECT COL1 AS 'col1',COL2 AS 'col2'
+FROM <TABLE NAME> 
+ORDER BY <COLUMN NAME> //GIVE THE NAME OF COL WHICH NEED TO PERFORM ORDER BY
+
+ORDER BY : this will sort the string and numeric values
+-----------------------
+SELECT COL1 AS 'col1',COL2 AS 'col2'
+FROM <TABLE NAME> 
+ORDER BY <COLUMN NAME> DESC // HIGHER NUMBER APPEAR ON TOP
+------------------------
+SELECT DISTINCT <col name> 
+FROM <table name>
+ORDER BY <country>
+//Inside a table, a column often contains many duplicate values; and sometimes you only want to list the different (distinct) values.
+ex: there can be 3 records from same country,to see different countries we use distinct
+-------------------------
+SELECT COL1 AS 'col1',COL2 AS 'col2'
+FROM <TABLE NAME>
+LIMIT number
+limits the number of records appear in the table
+-------------------------
+SELECT COL1 AS 'col1',COL2 AS 'col2'
+FROM <TABLE NAME>
+LIMIT 10 OFFSET 10 <THIS SHOWS 11 TO 20 RECORDS> BUT 10 RECORDS
+----------------------------
+CORRECT SEQUENCE
+
+SELECT <COL NAME>
+FROM <TABLE NAME>
+WHERE <CONDITION>
+GROUP BY <COL NAME>
+HAVING <CONDITION>
+ORDER BY <COL NAME>
+-----------------------------
