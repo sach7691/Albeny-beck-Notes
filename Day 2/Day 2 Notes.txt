@@ -68,3 +68,5 @@ do some modification to file 1 and commit, push to remote
 comeback to local and type
 git pull
 
+
+git branch -m master -> we can bring back to master if you are in main
