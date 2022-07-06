@@ -77,6 +77,8 @@ Golden rule: Do not update the stuff in master branch
 what is branching in git?
 creating parallel workflow which allows the git user/developer to update/delete/add resources or code
 
+branches used to work in isolated area, then whatever you changes made should push to master in the origin and later on you can drop the branch
+
 Commands:
 
 git branch : this will list down the branches, initially master is the only branch
@@ -90,3 +92,24 @@ git checkout feature: to switch to branch feature
 git branch -d feature : delete feature branch
 
 after initiating git log --oneline, head and origin was in the same line that is after the pulling from remote repo
+
+---------------------------------------How can we clone specific branch using git command?
+
+git clone  --branch <branchname> <remote repo url>
+
+git branch -a : see the all branches
+
+--------------------------------------
+how can we merge a branch into another branch?
+
+There are two types of merges
+
+git merge <branchName>
+
+1.
+what is fast-forward merge?
+when a branch is merged into master/or other branch, which has not changed since the new branch was created (ex: mater not changed but feature changed)
+
+2.
+what is true merge/three-way merge?
+when a branch is merged into master/or other branch, which has changed since the new branch was not created (ex: when merging master and feature have both changed)
