@@ -68,5 +68,25 @@ do some modification to file 1 and commit, push to remote
 comeback to local and type
 git pull
 
-
 git branch -m master -> we can bring back to master if you are in main
+-----------------------------------
+Branching
+
+Golden rule: Do not update the stuff in master branch
+
+what is branching in git?
+creating parallel workflow which allows the git user/developer to update/delete/add resources or code
+
+Commands:
+
+git branch : this will list down the branches, initially master is the only branch
+* master : wildcard shows the current position
+ex: branches: master, feature,hotfix - immediate fixes
+
+git branch feature : create feature branch
+
+git checkout feature: to switch to branch feature
+
+git branch -d feature : delete feature branch
+
+after initiating git log --oneline, head and origin was in the same line that is after the pulling from remote repo
