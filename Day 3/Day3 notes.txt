@@ -3,13 +3,219 @@ to execute sql commands in the cmd prompt, and type following
 cd xampp
 cd mysql
 cd bin
-mysql -u root -p
-enter password
+mysql -u root -p // create a user no need to give pwd
+mariaDB // default db used by mysql
+MariaDB [(none)] // none shows database is not selected
+enter password : just enter if you have not set one so far
+
+USE test; // selected db name is test
+CREATE database se3; // create a db name se3
+
+USE se3; // to select the db se3
+SHOW tables; // to see the tables
 
 SHOW DATABASE
 -> ;
+------------------------------
+syntax:
+
+CREATE database|table|user|index|view <name>....
+CREATE table <tablename>(
+				Col name <datatype>(size)
+
+				);
+ex:
+CREATE table Student_details(
+			   student_id int(10),
+			   student_name varchar(20), 
+			   student_email varchar(20)
+			   );
+// varchar stores both numeric and charcters
+
+show tables; // to view db tables
+DESCRIBE <table name> or DESC <table name>// descibe what are the fields in the table
+
+//write a query to add a new column to the table
+ALTER table <table name> ADD column <col name><datatype>(size);
+ALTER table student_details ADD column course varchar(20);
+
+//change request comes in as update the size of existing column
+ALTER table student_details MODIFY column student_email varchar(25); 
+
+//write a query to drop a column from an existing table
+ALTER table student_details DROP column course;
+------------------------------------------------------------
+
+//Insert has 2 options
+
+1. inserting values into all columns of selected table
+ INSERT into <table name> VALUES (val1,val2,val3,.......);
+
+EXAMPLE:
+INSERT into student_details VALUES (1,'sachini','sach@gmail.com'); 
+INSERT into student_details VALUES (2,'Anu','anu@gmail.com'); 
+INSERT into student_details VALUES (3,'sasika','sas@gmail.com');
+
+another way of writing insert in a one satement
+INSERT into student_details VALUES (4,'sachini','sach@gmail.com'),
+						(5,'Anu','anu@gmail.com'),
+						(6,'sasika','sas@gmail.com');
+	
+
+2. inserting values into selected columns
+INSERT into <table name>(col1,col2,col3,.........) VALUES (VAL1 VAL2,VAL3);
+
+write a query to view all records
+SELECT * FROM student_details;
+
+write a quesry to display name and email of all students
+SELECT student_name,student_email FROM student_details;
 
 ----------------------------
+/////////////////////////////////////////////////////////////////
+Class notes
+
+what is a database?
+
+A collection of logically related files (*) that maintain organized data. or placeholder/container where we can store data/ A repository for storing data
+
+*Logical files do not contain data. They contain a description of records found in one or more physical files. A logical file is a view or representation of one or more physical files.
+
+What is a file ?
+Any raw data / information stored on a disk (memory/hard-drive)
+
+What is a file systems?
+
+A collection of files that are used to persist data
+
+Ex File systems: FAT (File Allocation Table) / NTFS (windows file systems)/APFS (Apple File system)
+
+Research : difference between file system and db (advantages and disadvantages)
+
+A File System is a collection of raw data files stored in the hard-drive, whereas a database is intended for easily organizing, storing and retrieving large amounts of data. In other words, a database holds a bundle of organized/structured data typically in a digital form for one or more users.
+
+Both are persistant storage area, but they have their own way of storing data
+DB is more secure than FS
+log files should not in the db otherwise server will crash. because log file is updateing all the time
+--------------------------------
+What is DBMS ?
+
+A collection of databases and application programs that are used to create and maintain multiple databases. (research on this)
+--------------------------------
+Types of databases
+
+1.Relational DB (RDBMS)- Oracal, SQL, PostgrasSQL,SQLite
+
+Any db which maintains data in the form of tables
+A DB which follows normalization principles / relational schema
+
+Normalization is the process of minimizing redundancy from a relation or set of relations. Redundancy in relation may cause insertion, deletion, and update anomalies. So, it helps to minimize the redundancy in relations. Normal forms are used to eliminate or reduce redundancy in database tables.
+
+2. NOSQL (Not only SQL) Databases : MongoDB
+
+Schemaless - Looks like plain text
+mainly used for business transaction/ just to take data and store it
+Social media and feeds going to this category
+------------------------------------------------------------
+Tansaction is : a complete task, sender sends money and that should go to reciver account if not money should roll back to sender. so for these we use transaction database / An activity which has complete life-cycle(start and end) with success or faliure
+---------------------------------------------------------------
+What are ACID principels? ACID associate with transactions 
+
+ACID (Atomicity, Consistency, Isolation, Durability)
+
+1. Atomic : transaction executed as a Single operation (if you write something that should be completed otherwise if someone else write at the sametime there will be conflict so one operation should completed the task)
+
+ex: if a transaction is initiated by an application it has to be executed as a single opeation.
+
+use-case: Transfer funds from ACC A to ACC B
+
+Suppose there are two trans functions
+
+update 1 
+update 2 - if these two run seperately then there will be problems  with conflict
+
+instead if we go with 
+
+begin{
+update 1
+update 2
+}end 	// run as a one transaction may lead to avoid conflict that's atonomicity
+
+2. Consistensy : 
+
+ex : use-case: Transfer funds from ACC A to ACC B
+you can view the trnas in your mobile phone app
+
+transaction should consistent/cascade(updated) across any where you access the account 
+
+Transaction must be consistant by means of propagating the changes made by transaction across all sections
+
+3. Isolation :keeps transactions separated from each other until they’re finished. (same concept like critical section in semerphours)
+
+Transaction should be executed in an isolation environment so that it ensures no conflict. / it is all about safeguarding.
+
+ex: locking at table-level or column so that other quieries cannot conflict the current query execution.
+
+4. Durability: guarantees that the database will keep track of pending changes in such a way that the server can recover from an abnormal termination. / Commited data never lost
+
+transaction results must be stored/persisted to ensure that the results can be accessed in future
+-------------------------------------------------------
+The Three Stages of Disaster Recovery Sites:
+
+Hot Site: this is the live server/Hot sites are essentially mirrors of your datacenter infrastructure
+Warm : this is the one who get started to work when hot server fails/A warm site is the middle ground of the two disaster recovery options.
+Cold : Not started to operate/A cold site is essentially office or datacenter space without any server-related equipment installed
+---------------------------------------------------------
+What is SQL?
+
+An interface between user applications and actual database
+
+What commands are classified into 4 types: 
+1. DDL : Data Definition Language
+// used to create/maintain db objects such as db, db users,tables,indexes,views etc.
+//deals with table structure or underlying schema
+
+Metadata is "data that provides information about other data"
+
+2. DML : Data Manipulation Language
+
+//used to manipulate data by means performing CURD operation
+C - Create records, R- read records, U - Update, D- Delete
+
+3. DCL : Data Control Language // this is for admin people
+
+//used by admin user to grant permission and also revoke permissions
+
+4.TCL : Transaction control language
+//used to manage the transactions by means of executing commit or rollback commands
+
+--------------------------------------------------------
+DDL Commands:
+
+CREATE
+ALTER
+DROP
+TRUNCATE
+-----------------------------------------------------------
+DML Commands:
+
+INSERT
+SELECT
+UPDATE
+DELETE
+---------------------------------------------------------
+DCL Commands:
+GRANT
+REVOKE
+--------------------------------------------------------
+TCL Commands:
+COMMIT
+ROLLBACK
+-------------------------------------------------------
+
+---------------------------------------------------------
+My learnings
+
 commands
 
 SHOW table : show the existing tables
@@ -52,3 +258,59 @@ GROUP BY <COL NAME>
 HAVING <CONDITION>
 ORDER BY <COL NAME>
 -----------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
