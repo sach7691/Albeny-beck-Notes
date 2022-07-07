@@ -97,11 +97,11 @@ A File System is a collection of raw data files stored in the hard-drive, wherea
 Both are persistant storage area, but they have their own way of storing data
 DB is more secure than FS
 log files should not in the db otherwise server will crash. because log file is updateing all the time
---------------------------------
+-----------------------------------------------------------------------------------------------------
 What is DBMS ?
 
 A collection of databases and application programs that are used to create and maintain multiple databases. (research on this)
---------------------------------
+-----------------------------------------------------------------------------------------------------
 Types of databases
 
 1.Relational DB (RDBMS)- Oracal, SQL, PostgrasSQL,SQLite
@@ -116,9 +116,9 @@ Normalization is the process of minimizing redundancy from a relation or set of 
 Schemaless - Looks like plain text
 mainly used for business transaction/ just to take data and store it
 Social media and feeds going to this category
-------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
 Tansaction is : a complete task, sender sends money and that should go to reciver account if not money should roll back to sender. so for these we use transaction database / An activity which has complete life-cycle(start and end) with success or faliure
----------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------
 What are ACID principels? ACID associate with transactions 
 
 ACID (Atomicity, Consistency, Isolation, Durability)
