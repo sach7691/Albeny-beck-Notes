@@ -1,77 +1,4 @@
-to execute sql commands in the cmd prompt, and type following
 
-cd xampp
-cd mysql
-cd bin
-mysql -u root -p // create a user no need to give pwd
-mariaDB // default db used by mysql
-MariaDB [(none)] // none shows database is not selected
-enter password : just enter if you have not set one so far
-
-USE test; // selected db name is test
-CREATE database se3; // create a db name se3
-
-USE se3; // to select the db se3
-SHOW tables; // to see the tables
-
-SHOW DATABASE
--> ;
-------------------------------
-syntax:
-
-CREATE database|table|user|index|view <name>....
-CREATE table <tablename>(
-				Col name <datatype>(size)
-
-				);
-ex:
-CREATE table Student_details(
-			   student_id int(10),
-			   student_name varchar(20), 
-			   student_email varchar(20)
-			   );
-// varchar stores both numeric and charcters
-
-show tables; // to view db tables
-DESCRIBE <table name> or DESC <table name>// descibe what are the fields in the table
-
-//write a query to add a new column to the table
-ALTER table <table name> ADD column <col name><datatype>(size);
-ALTER table student_details ADD column course varchar(20);
-
-//change request comes in as update the size of existing column
-ALTER table student_details MODIFY column student_email varchar(25); 
-
-//write a query to drop a column from an existing table
-ALTER table student_details DROP column course;
-------------------------------------------------------------
-
-//Insert has 2 options
-
-1. inserting values into all columns of selected table
- INSERT into <table name> VALUES (val1,val2,val3,.......);
-
-EXAMPLE:
-INSERT into student_details VALUES (1,'sachini','sach@gmail.com'); 
-INSERT into student_details VALUES (2,'Anu','anu@gmail.com'); 
-INSERT into student_details VALUES (3,'sasika','sas@gmail.com');
-
-another way of writing insert in a one satement
-INSERT into student_details VALUES (4,'sachini','sach@gmail.com'),
-						(5,'Anu','anu@gmail.com'),
-						(6,'sasika','sas@gmail.com');
-	
-
-2. inserting values into selected columns
-INSERT into <table name>(col1,col2,col3,.........) VALUES (VAL1 VAL2,VAL3);
-
-write a query to view all records
-SELECT * FROM student_details;
-
-write a quesry to display name and email of all students
-SELECT student_name,student_email FROM student_details;
-
-----------------------------
 /////////////////////////////////////////////////////////////////
 Class notes
 
@@ -213,7 +140,81 @@ COMMIT
 ROLLBACK
 -------------------------------------------------------
 
----------------------------------------------------------
+==============================================================================================
+to execute sql commands in the cmd prompt, and type following
+
+cd xampp
+cd mysql
+cd bin
+mysql -u root -p // create a user no need to give pwd
+mariaDB // default db used by mysql
+MariaDB [(none)] // none shows database is not selected
+enter password : just enter if you have not set one so far
+
+USE test; // selected db name is test
+CREATE database se3; // create a db name se3
+
+USE se3; // to select the db se3
+SHOW tables; // to see the tables
+
+SHOW DATABASE
+-> ;
+------------------------------
+syntax:
+
+CREATE database|table|user|index|view <name>....
+CREATE table <tablename>(
+				Col name <datatype>(size)
+
+				);
+ex:
+CREATE table Student_details(
+			   student_id int(10),
+			   student_name varchar(20), 
+			   student_email varchar(20)
+			   );
+// varchar stores both numeric and charcters
+
+show tables; // to view db tables
+DESCRIBE <table name> or DESC <table name>// descibe what are the fields in the table
+
+//write a query to add a new column to the table
+ALTER table <table name> ADD column <col name><datatype>(size);
+ALTER table student_details ADD column course varchar(20);
+
+//change request comes in as update the size of existing column
+ALTER table student_details MODIFY column student_email varchar(25); 
+
+//write a query to drop a column from an existing table
+ALTER table student_details DROP column course;
+------------------------------------------------------------
+
+//Insert has 2 options
+
+1. inserting values into all columns of selected table
+ INSERT into <table name> VALUES (val1,val2,val3,.......);
+
+EXAMPLE:
+INSERT into student_details VALUES (1,'sachini','sach@gmail.com'); 
+INSERT into student_details VALUES (2,'Anu','anu@gmail.com'); 
+INSERT into student_details VALUES (3,'sasika','sas@gmail.com');
+
+another way of writing insert in a one satement
+INSERT into student_details VALUES (4,'sachini','sach@gmail.com'),
+						(5,'Anu','anu@gmail.com'),
+						(6,'sasika','sas@gmail.com');
+	
+
+2. inserting values into selected columns
+INSERT into <table name>(col1,col2,col3,.........) VALUES (VAL1 VAL2,VAL3);
+
+write a query to view all records
+SELECT * FROM student_details;
+
+write a quesry to display name and email of all students
+SELECT student_name,student_email FROM student_details;
+-------------------------------------------------
+===============================================================-
 My learnings
 
 commands
