@@ -247,7 +247,7 @@ UNION ALL : retains the duplicates in the final result. student table had 5 reco
 
 INTERSECT: lists only records that are common to both the SELECT queries. basically use with IN operator
 
-MINUS set operator removes the second query's results from the output if they are also found in the first query's results. 
+MINUS set operator removes the second query's results from the output if they are also found in the first query's results. Q1 (1,2,3,4) , Q2(1,3,5) minus operator will eliminate 1,3 from the Q2 output since 1,3 found in the Q1
 
 INTERSECT and MINUS set operations produce unduplicated results.
 
