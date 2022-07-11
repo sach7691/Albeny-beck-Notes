@@ -1,0 +1,317 @@
+QUERIES
+--------
+//write a query to display all payments details
+
+select * from payment;
+------------------------------------------
+// write a query to display payment_id and payment_description
+
+select payment_id, payment_description
+from payment;
+-------------------------------------------
+//write a query to display all payments details which are associated with particular student
+
+select * 
+from payment
+where student_id =1;
+----------------------------------------------
+//write a query to display payment details of students who's ids are 1,2,3 and 4
+
+select * from payment 
+			where student_id = 1 
+			OR student_id = 2
+			OR student_id= 3 
+			OR student_id = 4 ;
+
+DRY principle : Do Not Repeat yourself ( if you have 20 ids to display then above lines have to be repeated) --> this is not a good thing in programming.
+
+select * from payment 
+			where student_id >= 1 AND student_id <= 4
+
+select * from payment 
+			where student_id BETWEEN 1 AND 4;
+
+select * from payment 
+			where student_id IN(1,2,3,4);
+
+select * from payment 
+			where student_id IN(select student_id from payment); // if numbers are increased to 50, this query take longer query execution time.
+
+---------------------------------------------------
+Insert some values for payment col1,col2,and col3
+
+insert into payment(payment_id,payment_description,Payment_amount)
+		values(5,'Stationary',10);
+---------------------------------------------------
+write a query to display payment details where student_id is unknown
+
+select * from payment 
+			where student_id IS NULL;
+
+select * from payment 
+			where student_id = NULL; ---> this set gives empty set because no value can ever be equal to null 
+---------------------------------------------------
+
+Consider this example for sub-query
+
+write a query to display all information where highest payment_amount 
+
+select * from payment where MAX(payment_amount) -- Error- you cannot specify functions right after where clause
+
+
+select * from payment where payment_amount = (select max(payment_amount) from payment);
+			
+Note: Sub-query also refered as nested query which is always return in paranthisis ()
+sub-query helps main query to achieve a given task.
+
+------------------------------------------------------
+
+what are aggregate functions?
+
+Aggrigate functions always return a scalar value (single value result)
+
+List of aggregate functions
+
+MIN,MAX,SUM,AVG,COUNT
+
+-------------------------------------------------------
+write a query to display payment details along with student details
+//use one of the SQL JOIN tyoes to write the query
+
+---------INNER JOIN------
+select * 
+from student
+INNER JOIN payment
+ON student.student_id = payment.student_id;
+
+---------LEFT JOIN--------
+
+select student.student_id,student_name,payment_id,payment_amount 
+from student
+LEFT JOIN payment
+ON student.student_id = payment.student_id;
+
+---------RIGHT JOIN--------
+
+select student.student_id,student_name,payment_id,payment_amount 
+from student
+RIGHT JOIN payment
+ON student.student_id = payment.student_id;
+
+NOTE: in left and right joins you will have NULL values for left or right side if there is no matching values
+
+MariaDB does not support full join 
+
+------------joining 3 tables--------------
+join 2 tables first and get the result, then join 3rd table with resulting table
+
+select student.student_id,student_name,payment_id,payment_amount,course_title 
+from student
+RIGHT JOIN payment
+ON student.student_id = payment.student_id
+RIGHT JOIN course
+ON student.student_id = course.student_id;
+
+----use ALIAS when joining the table to eliminate redundancy----
+
+select s.student_id,s.student_name,p.payment_id,p.payment_amount 
+from student s
+RIGHT JOIN payment p
+ON s.student_id = p.student_id;
+
+----------------------------------------------
+
+ORDER BY and GROUP BY clauses
+
+write a query to display student details in ascending order based on name
+
+SELECT * FROM student
+ORDER BY student_name ASC;
+
+write a query to display student details in decending order based on name
+SELECT * FROM student
+ORDER BY student_name DESC;
+
+Can we use order by clause in multiple columns in same query? Yes
+
+SELECT * FROM student 
+ORDER BY student_name ASC,student_email DESC;
+
+NOTE: this query shows the difference when there are same names with different emails ex: 5 sachini's with different emails, so email will line up descending order which we can explicitly see.
+
+-------------------------------------------------
+
+write a query to display the number of payments done by each students
+
+ SELECT student_id,COUNT(*)
+ FROM payment 
+GROUP BY student_id;
+
+-----WHERE condition cannot use after GROUP BY Clause-------
+SELECT student_id,COUNT(*)
+ FROM payment 
+GROUP BY student_id
+WHERE student_id IS NOT NULL; ---->Error
+
+//working query
+SELECT student_id,COUNT(*)
+ FROM payment 
+WHERE student_id IS NOT NULL
+GROUP BY student_id;
+
+----------------------------------------------------------
+Best Practices: Don't use WHERE instead use HAVING with GROUP BY
+----------------------------------------------------------
+write a query to dispay the number of payments made by each studnet (Hint: GROUP BY with HAVING)
+
+SELECT student_id,COUNT(*) AS 'total payment'
+ FROM payment 
+GROUP BY student_id
+HAVING student_id IS NOT NULL; // with group by it is better to use having clause instead of where clause
+
+---------------------------------------------------------
+
+write a query to display number of payment made by each student where count is  > 1 (total count >1 payments)
+
+SELECT student_id,COUNT(*) AS total_payment
+FROM payment 
+GROUP BY student_id
+HAVING total_payment > 1 AND student_id IS NOT NULL;
+
+-----------------------------------------------------------
+
+What is a view in database?
+
+A view acts as a virtual table which is a mirror copy of another table. 
+A view may have less number of columns then its underlying table.
+Views provide "coulmn-level security" and also offers a better change management options.
+
+How can we create a view in SQL?
+
+CREATE view <view name>;
+CREATE view student_view AS SELECT student_id, student_name FROM student;
+
+DESC student_view; // check whether view is created or not
+SELECT * FROM student_view; // this will hide the email column, provide security 
+
+here student is referred as an underlying 
+
+Are views updatable? Yes, by default we can update (can insert data to view), once you create a view make sure to make it read only. otherwise it will violate the security.
+
+------------------------------------------------
+user is granted only for select commands
+
+GRANT SELECT on student_view to skandawala;
+
+GRANT ALL on student_view to skandawala; // allow all operations
+GRANT INSERT on student to skandawala; // allow only for insert
+
+------------------------------------------------
+
+what is an index? 
+
+Index improves the performance of querying 
+
+An index can be created on one or more columns.
+
+ex: 
+
+CREATE index <index name> on <table name>(col name);
+
+CREATE index idx1 on student(student_email);
+
+SELECT * from student WHERE student_email = '';
+
+---------------------------------------------
+Research
+
+SET operations in SQL
+
+Set operators are used to join the results of two (or more) SELECT statements.
+
+UNION,UNION ALL,INTERSECT,and MINUS
+
+UNION:  returns the combined results of the two SELECT statements.Essentially,it removes duplicates from the results i.e. only one row will be listed for each duplicated result.
+
+when performing UNION, both table must have same column names and data types (remeber student vs students tables youtube video)
+https://www.youtube.com/watch?v=8nb_CVmjBrI&ab_channel=DhruvinShah
+---------------------------------------------------------
+select student.student_id,student.student_marks from student 
+UNION
+select students.student_id,students.student_marks from students 
+
+student table had 5 records, students table had 25 records but result had 28 records. 2 records were missing. that is because UNION removes duplicates from the results, so the missing 2 results were duplicates 
+---------------------------------------------------------
+
+UNION ALL : retains the duplicates in the final result. student table had 5 records, students table had 25 records but result had 30 records. this permits the duplicate 2 records as well.
+
+INTERSECT: lists only records that are common to both the SELECT queries. basically use with IN operator
+
+MINUS set operator removes the second query's results from the output if they are also found in the first query's results. 
+
+INTERSECT and MINUS set operations produce unduplicated results.
+
+---------------------------------------------------------------
+SET operations Vs JOINS
+
+SET opeartions joins the data into new rows where as joins combine data into columns
+
+when performing UNION, both table must have same column names and data types (remeber student vs students tables youtube video)
+https://www.youtube.com/watch?v=8nb_CVmjBrI&ab_channel=DhruvinShah
+
+------------------------------------------------------------
+LIKE operator
+
+Knows to write queries using LIKE command
+------------------------------------------------------------
+CASE statements
+
+write a query to conditionally increment the salary of employees
+manager salary is incremented by 2000
+developer salary is incremented by 1000
+else salary will remain the same
+
+select emp_name,salary,designation,case (designation)
+when 'manager' then salary+2000
+when 'developer' then salary+1000
+else salary
+end AS net_salary
+from employees;
+----------------------
+
+select emp_name,gender,case(gender)
+when 'M' then concat('Mr',emp_name)
+when 'F' then concat('Mrs',emp_name)
+end
+from employees;
+---------------------------
+
+Create Stored procedures---------------
+
+DELIMITER //
+CREATE PROCEDURE selectStudent()
+BEGIN
+SELECT * FROM student
+END //
+
+DELIMITER;
+
+execute stored procedures----------------
+
+EXEC select_student; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
