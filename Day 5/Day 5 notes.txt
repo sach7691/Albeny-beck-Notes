@@ -285,6 +285,18 @@ when 'F' then concat('Mrs',emp_name)
 end
 from employees;
 ---------------------------
+Self-join
+
+MySQL Self JOIN is an SQL statement that is used to intersect or join a table in the database to itself. Basically, a JOIN function combines two or more tables in SQL, but here Self Join is a regular Join that allows to combine records within a table based on a certain conditional expression.
+
+ex:
+SELECT A.Column_Name, B.Column_Name
+FROM TableA T1, TableA T2 
+WHERE A.Common_Field = B.Common_Field;
+
+//Here, T1 and T2 are two aliases used for the same table named Table A in the database and the WHERE clause denotes any given conditional expression.
+
+
 
 Create Stored procedures---------------
 

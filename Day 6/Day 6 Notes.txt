@@ -1,0 +1,27 @@
+what is an entity?
+
+An entity represents a real-world object which have some state/ behaviour(charactheristics)
+An entity can be referred as a table in database.
+An entity may have one or more attributes that represents state or characteristcs of real-world object.
+An entity can be identify as "Noun". 
+Entitites may have association with one or more entities which forms an entity relationship diagram (ERD).
+
+Example: 
+employee - entity
+characteristics : emp_id, emp_name,salary,position,start_date
+--------------------------------------------------------------------------------------
+
+Types of relationships in ERD
+
+1. one-to -many
+2. one-to-one
+3. Many-to-one
+4. Many-to-Many
+
+--------------------------------------------------------------------------------------
+
+Types of design or models in RDBMS
+
+1. Conceptual Model : This model shows entitites and association only ( no attributes in the entitiies)
+2. Logical model : shows entities, association between entities and attributes
+3. Pysical Model: shows entities, association between entities and attributes along with db specific data types and sizes.

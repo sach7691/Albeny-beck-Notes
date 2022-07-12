@@ -141,4 +141,7 @@ write a query to add PRIMARY KEY CONSTRAINT to an existing column
 
 ALTER table payment ADD CONSTRAINT PK_Payment PRIMARY KEY (payment_id);
 
+Add a constraint to foreign key 
+ALTER table property ADD CONSTRAINT fk_employee FOREIGN KEY (employee_id) REFERENCES employee(employee_id);
+
 ---------------------------------------------------------------
