@@ -54,6 +54,9 @@ Examples: Java, C, C++.
 Dynamically typed programming languages do type checking at run-time.
 Examples: Perl, Ruby, Python, PHP, JavaScript
 
+Java is a strongly typed programming language because every variable must be declared with a data type. A variable cannot start off life without knowing the range of values it can hold, and once it is declared, the data type of the variable cannot change.
+
+Pyton is loosly type language no need to declare data types
 --------------------------------------------------------
 Following data types called as “Primitve” Data types 
 
