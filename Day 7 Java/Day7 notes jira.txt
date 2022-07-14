@@ -1,0 +1,18 @@
+what is Jira and Confluence ?
+
+Jira is a bug tracking tool / workflow management tool / project management tool.
+
+Jira allows us to create various project boards such as kanban,scrum  and srumban (combination of kanban and scurm)
+
+Kanban : will have no fixed time bounds(no pressure in deadline) 
+scrum : There will be fixed time bounds which are called as sprints. each sprint may last long for at least 2 weeks.
+
+sprint may have one or more tasks/issues/tickets that needs to be completed within a sprint
+
+srumban is a combination of kanban and scrum
+
+Trello is another tool as jira but not popular in industry
+-----------------------------------------------
+confluence: tool which mainly used for documentation 
+
+documentation: can be a guide to install software, details about bugs,scrum meeting content so absentees can see the doc and understand the status.

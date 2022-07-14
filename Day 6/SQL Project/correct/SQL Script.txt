@@ -1,0 +1,65 @@
+CREATE table property(
+			    prop_id int,
+			    rep_id int,
+			    prop_name varchar(20),
+			    prop_condition varchar(20),
+			    PRIMARY KEY(prop_id)
+                     );
+ALTER table property ADD CONSTRAINT fk_prop FOREIGN KEY(rep_id) REFERENCES rep(rep_id);
+
+CREATE table rep(
+		     rep_id int,
+		     rep_name varchar(20),
+		     rep_salary double(10,2),
+		     PRIMARY KEY(rep_id)
+                 );
+
+CREATE table salesup(
+			   salesup_id int,
+			   rep_id int,
+			   sup_id int,
+                     PRIMARY KEY(salesup_id)
+                     );
+ALTER table salesup ADD CONSTRAINT fk_salesuprep FOREIGN KEY(rep_id) REFERENCES rep(rep_id);
+ALTER table salesup ADD CONSTRAINT fk_salesup FOREIGN KEY(sup_id) REFERENCES supervisor(sup_id);
+
+CREATE table supervisor(
+			      sup_id int,
+				sup_type varchar(20),
+				PRIMARY KEY(sup_id)
+			     );
+
+CREATE table customer(
+		     cus_id int,
+		     rep_id int,
+		     cus_name varchar(20),
+		     PRIMARY KEY(cus_id)
+                 );
+ALTER table customer ADD CONSTRAINT fk_cus FOREIGN KEY(rep_id) REFERENCES rep(rep_id);
+
+CREATE table area(
+		     area_id int,
+		     area_name varchar(20),
+		     PRIMARY KEY(area_id)
+                 );
+
+CREATE table salearea(
+		        salearea_id int,
+			  area_id int,
+			  rep_id int,
+			  PRIMARY KEY(salearea_id)
+                   );
+ALTER table salearea ADD CONSTRAINT fk_salesarearep FOREIGN KEY(rep_id) REFERENCES rep(rep_id);
+ALTER table salearea ADD CONSTRAINT fk_salearea FOREIGN KEY(area_id) REFERENCES area(area_id);
+
+
+
+CREATE table chief(
+		     chief_id int,
+		     rep_id int,
+		     area_id int,
+		     PRIMARY KEY(chief_id)
+                 );
+ALTER table chief ADD CONSTRAINT fk_cheifrep FOREIGN KEY(rep_id) REFERENCES rep(rep_id);
+ALTER table chief ADD CONSTRAINT fk_chiefarea FOREIGN KEY(area_id) REFERENCES area(area_id);
+

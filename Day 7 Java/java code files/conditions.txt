@@ -1,0 +1,25 @@
+class conditions{
+
+public static void main(String[] args){
+
+     int a = 10; // declaration and initialization
+     int b = 20;
+
+      int c; // declaration only
+          c = 30;
+
+      if (a>b){
+
+	System.out.println(a);
+     }
+
+
+}
+
+
+
+
+
+
+
+}

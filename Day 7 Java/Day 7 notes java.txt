@@ -1,0 +1,104 @@
+what is a program?
+
+A set of instructions wriiten to solve a given problem.
+
+
+why programming?
+
+offers to way to solve a given problem
+A problem solving Technique (PST)
+Automation
+
+--------------------------------
+types of programming languages
+
+1. Procedural Oriented Languages : this has a sequential approach and not suitable for real-world use-case.
+   
+ example:   C language
+
+2. Object-Oriented Languages: can take real-world objects in non-sequental manner, better maintainance, re-usable, can intergrate different objects, random creation
+
+ example:  C++,Java,Python,c# (find different between these languages)
+
+spending time developing with java is higher than python but java execution time is lesser than python because python takes time to execute.
+
+3. Functional Programming Languages
+
+  Scala (this is the next level of java developers can learn)
+  less number of key stroke required for scala than java.
+  good for ML projects
+
+
+Types of translators in programming domain
+-------------------------------------------
+Source code : written by developer using high-level languages
+Machine language : low-level language which is understanable to machines
+
+1. Compiler : Faster, compiles the code from one format to another format (High -level to low-level)
+
+2. Interpreter: Slower than compiler because it interprets the code line-by-line
+
+Java uses both translators
+
+------------------------------------------------
+What is java programming?
+
+java was developed at Sun Microsystems
+since oracle acquired Sun Microsystems java product is under the control of Oracle
+
+----------------------------------------------------
+Features of java programming
+
+1. Simple to learn by the learners who have some knowledge.
+
+2. java has back-ward compatible, they can easily change the version(new versions possible), but python still has 3 versions because it is not back-ward compatible and have lot of dependecies to build a new version.
+
+3.Portable : Platform-independent (can run on different machines with different OS)
+
+4. Secure: java wants to avoid .exe files because .exe files can easily attack by attackers.
+java .class files is not allow modification (ensure integrity), if modified java interpreter (interpreter will see the modification) will not allow you to execute the file. 
+
+5. Multi-threaded : improving the performance of the application.
+
+----------------------------------------------------------------
+
+Very first java program
+
+Steps involved:
+
+1. write a java code (source code) and save it in <filename>.java
+
+In order to open cmd, just go the file folder and type cmd in the location bar. it automatically open the cmd with current location
+
+2. Compile the source code using java compiler. 
+
+> javac <filename>.java
+
+3. Execute or Run the code/application
+
+>java <classname>
+
+------------------------------------------------------------------
+
+In test file;
+
+there are 3 classes mentioned : First, String, System
+
+Class is a blueprint of a real-world object.
+
+.class file : bytecode where we can run on any paltform
+
+if you modify code make sure to compile it and run. 
+
+-----------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
