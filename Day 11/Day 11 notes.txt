@@ -69,7 +69,6 @@ System.out.println(s);  //Hello Sachini
 
 ------------------------------------
 
-
 NOTE: In OOP, we declare SETTER and GETTER methods
 
 SETTER mothods also known as "Mutators", these methods are primarily responsible for setting values into instance variables (variables that present state of real-world object)

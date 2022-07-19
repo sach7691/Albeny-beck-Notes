@@ -22,7 +22,7 @@ public class Vehicle{
     System.out.print("How many objects need to be created :");
     int x = Integer.parseInt(reader.readLine());
 
-    Car[] cars = new Car[x];
+    Car[] cars = new Car[x]; //creating # of object array
 
     // Reading data using readLine and storing in the object array
     for(int i = 0 ; i < cars.length; i++){
