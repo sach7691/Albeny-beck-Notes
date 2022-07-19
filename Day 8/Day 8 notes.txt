@@ -242,6 +242,8 @@ ex: oyter ticket machine, user cannot do something without display anything
 int a = 10; // declaration and initialization
 int c; // declaration only
 
+String is non-primitive variable with 16 bits (2 bytes)
+
 
 
 

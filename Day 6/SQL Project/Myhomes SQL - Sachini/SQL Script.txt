@@ -150,17 +150,13 @@ WHERE sr.sup_type IN ('manager','sales');
 ---------------------------------------------------------
 //Query 2:
 
-SELECT c.cus_name AS 'Customer Name',a.area_name AS 'Area Name',r.rep_name AS 'Rep Name',sr.sup_type AS 'Supervisor Type'
+SELECT c.cus_name AS 'Customer Name',a.area_name AS 'Area Name',r.rep_name AS 'Rep Name',ch.chief_id
 FROM customer c
 JOIN rep r
 ON c.rep_id = r.rep_id
-JOIN salearea sa
-ON r.rep_id = sa.rep_id 
+JOIN chief ch
+ON ch.chief_id = r.rep_id
 JOIN area a
-ON sa.area_id = a.area_id
-JOIN salesup s
-ON r.rep_id = s.rep_id
-JOIN supervisor sr
-ON s.sup_id = sr.sup_id
-WHERE sr.sup_type = 'manager'
+ON ch.area_id = a.area_id;
+
 

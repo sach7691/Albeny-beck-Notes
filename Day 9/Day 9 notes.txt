@@ -1,0 +1,169 @@
+class test{
+
+	public static void main(String[] args){
+
+      int a; //local variable
+
+      system.out.println(a); //gives an error
+
+      }
+}
+
+//According to java local variable must be initialized with a value.
+
+----------------------------------------
+class test{
+
+	public static void main(String[] args){
+
+      int a = 10; //local variable
+	int b  = a++; // post-increment
+
+      system.out.println(a); //output: 11
+      system.out.println(b); //output: 10
+      
+
+      int c = b++;
+      system.out.println(c); //output: 10 //get b's current value
+      system.out.println(b);//output: 11
+
+      c++;
+      system.out.println(c); //output: 11
+
+      system.out.println(b++); //output: 11
+      system.out.println(b); //output: 12
+
+
+      int d = ++b; // prefix (pre-increment)
+`
+      system.out.println(d); //output: 13
+      system.out.println(b); //output: 13
+
+      }
+}
+//b will have current a value, later a will increment by 1
+----------------------------------------------
+------------------------------------------------
+Scope of variable/ Lif-time of variable
+
+class test{
+
+	public static void main(String[] args){
+
+      int a = 10; //local variable
+
+	if (a == 10){
+
+      int b = 20; //local to if condition (life-time of b variable bound to if -block)
+      
+       system.out.println(a); //output: 10
+       system.out.println(b); //output: 20
+      }
+      
+       system.out.println(a); //output: 10
+       system.out.println(b); //Error
+      
+
+      }
+}
+
+----------------------------------------------------------
+---------------------------------------------------------
+
+class test{
+
+	public static void main(String[] args){
+
+      int i = 1; //initialization
+
+	while (i <= 10){ //condition
+      
+       system.out.println(i); //output:1 print in an infinite loop 
+    
+      }
+          
+
+      }
+}
+
+---------------------------------------------
+
+class test{
+
+	public static void main(String[] args){
+
+      int i = 1; //initialization
+
+	while (i <= 10){ //condition
+      
+       system.out.println(i); 
+
+       i++; //increment
+
+      }      
+
+      }
+}
+
+//i = i + 2 can be written as i += 2;
+
+operators:
+
+https://www.programiz.com/java-programming/operators#:~:text=Assignment%20operators%20are%20used%20in,the%20variable%20on%20its%20left.
+
+-----------------------------------------------
+Break and Continue
+
+
+class test{
+
+	public static void main(String[] args){
+
+      int i = 1; //initialization
+
+	while (i <= 10){ //condition
+
+        if (i ==5){
+
+         break; // break from while loop (break will terminate the current loop)
+
+        }
+      
+       system.out.println(i); // this will print up to 4 
+
+       i++; //increment
+
+         }      
+
+      }
+}
+ //at output 5 it will break from the while loop and terminates
+
+// if there are 2 while loops, break will terminate from inner while loop
+--------------------------------------------------
+
+class test{
+
+	public static void main(String[] args){
+
+      int i = 1; //initialization
+
+	while (i <= 10){ //condition
+
+        if (i == 5){
+
+         continue; // in 5th it will go back to while to check the condition again
+
+        }
+      
+       system.out.println(i); // this will print up to 4 
+
+       i++; //increment
+
+         }      
+
+      }
+}
+//print 1,2,3,4 from 5th onward infinite
+
+//Continue go back to while loop again

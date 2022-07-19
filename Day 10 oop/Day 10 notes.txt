@@ -1,0 +1,137 @@
+what is an oop programming? 
+
+It is one of the programming paradigm which allows developers to write code that is easy to maintain and re-use.
+
+Allows us to templates which contain data and other functionalities.
+
+Gives some principles that allow developers to write better code that meets most of the real-world use-cases
+
+-------------------------------------------
+what are 4 pillars of oop?
+
+1. Encapsulation
+
+2.Inheritence
+
+3.Abstraction
+
+4.Polymorphism
+
+-------------------------------------------
+what is a real-world object?
+
+An entity which exists with some characteristics
+
+A non-living thing we can feel, see or touch
+
+Anything which exists and quite distingishable/different from other things
+
+objects that have state(Data/characteristics) and behaviour
+
+-----------------------------------------
+what is a programming object?
+
+A combination of variables and methods
+
+An instance of a class 
+
+-------------------------------------------
+what is a class?
+
+a class is a template definition of the methods and variables in a particular kind of object.
+
+A template of real-world object
+
+A user-defined data types
+
+placeholder where we can declare variables and methods
+
+A specification of real-world object
+
+-----------------------------------------
+List out some examples of real-world object
+
+Mobilephone,laptop
+Student,Course,Employee,Department
+
+Student (id,name,age,email)
+
+Student Behaviour(enroll,payfees,downloadcoursework,uploassignments)
+
+------------------------------------------
+Syntax of a class declaration
+
+[access-specifier] <class> <className>{
+
+//List of variables
+//list of methods
+
+}
+
+examples: 
+
+class Student{ //class name followv-Upper camel-case
+
+int studentId; //varibale follow lower-camel-case
+string studentName;
+string studentEmail;
+int studentAge;
+char garde;
+boolean isRegistered;
+double avgScore;
+
+}
+--------------------------------------------
+
+Basic steps involved in oop
+
+1. Declare class with variable and method
+------------------------
+
+2. Instantiation - Process of creating objects
+
+<classname> reference name/variable = <new> <classname>([arguments]);
+
+example:
+
+Student s1 = new Student();
+------------------------
+3. setting values into class variables declared in step 1 usinf reference name from step 2.
+
+Example: 
+
+s1.studentId = 1;
+s1.studentName = "Sachini";
+s1.studentEmail = "sach@gmail.com";
+---------------------------
+
+4. Print the values of objects using reference name
+
+System.out.println(s1.studentId);
+System.out.println(s1.studentName);
+System.out.println(s1.studentEmail);
+
+----------------------------------------
+
+Java object created in heap section in the memory
+
+S1 is a local reference variable which refers to student class object on HEAP
+
+All local variables,method parameters are always maintained in stack memory
+
+------------------------------------------------------------------------------------
+
+Ways to read input from console in Java
+
+
+
+1.Using Buffered Reader Class
+
+This is the Java classical method to take input, Introduced in JDK1.0. This method is used by wrapping the System.in (standard input stream) in an InputStreamReader which is wrapped in a BufferedReader, we can read input from the user in the command line. 
+
+To read other types, we use functions like Integer.parseInt(), Double.parseDouble(). To read multiple values, we use split().
+
+2. Using Scanner Class
+
+ This is probably the most preferred method to take input. The main purpose of the Scanner class is to parse primitive types and strings using regular expressions, however, it is also can be used to read input from the user in the command line. 
+

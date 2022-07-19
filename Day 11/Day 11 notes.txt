@@ -1,0 +1,296 @@
+What is a method?
+
+A block of code which can be written once and called many times.
+
+NOTE: In java all methods are enclosed within classes
+
+Syntax:
+
+[access-specifier] [retrun-type] <methodname>([parameter-list]){
+
+//body of method
+
+//block of code
+
+}
+
+
+Example 1:
+//Method Declaration/Method Definition(A worker)
+void sayHello(){
+
+System.out.println("Hello World");
+
+}
+------------------------------------------------
+
+What is a method call?
+
+A call to an existing method is known as "Method Call"
+
+Syntax:
+
+ methodName([arguments]);
+
+ sayHello(); //Method call (A Manager)
+
+------------------------------------------------Method Example 2:
+
+//worker
+void add(int a, int b){
+
+System.out.println(a+b);
+
+}
+
+//manager or method call
+
+add(1,2);
+
+
+-----------------------------------------------
+Method Example 3:
+
+//worker
+String sayHello(String name){
+
+return "Hello " + name;
+
+}
+
+//Manager
+
+sayHello("Sachini"); //Hello Sachini value come out
+
+String s = sayHello("Anu"); 
+
+System.out.println(s);  //Hello Sachini
+
+
+------------------------------------
+
+
+NOTE: In OOP, we declare SETTER and GETTER methods
+
+SETTER mothods also known as "Mutators", these methods are primarily responsible for setting values into instance variables (variables that present state of real-world object)
+
+NOTE: Always setter method has return "void" type
+
+----------------------------------------
+GETTER MOTHODS are also known as "Accessors"
+
+These methods are primarily responsible for getting values from instance variables
+
+NOTE: GETTER methods always return something back to the caller
+
+----------------------------------------
+What is Encapsulation?
+
+Process of combining variables and methods into a single logical unit (class)
+
+Encapsulation suggests a principle which sates that the varible of a class should be declared as "Private" and methods as "Public"
+
+****encapsulation ensures data hiding, through private variables. To access them you should use public methods. methods with setting and getting variables.so that's where setters and getters comes in.
+
+Private members of a class cannot be accessed from outside of class in which variables and methods are declared.
+
+Public: 
+these members can accessessed from anywheremeans within and outside the class
+
+---------------------------------------------
+In java, all instance variables are given default values
+
+integer - 0
+float point - 0.0
+character- char - Blank space
+Boolean - false
+String - null
+------------------------------------
+this.studentId ==> basically refer the global variable (good practice)
+
+If parameter- list of method have same name as instance variable then there may be conflict between parameters and instance variables - To avoid conflict use "this" keyword
+
+What is "this" keyword in java?
+
+A reference variable which always refers to current working class object (variables and method)
+-------------------------------------------
+What is a constructor?
+
+A constructor is a special method which will have same name as class name
+
+constructor constructs objects. without constructor we cannot create objects
+
+constructor is used to initialize class objects
+
+constructor is involked immediately upon the creation of object
+
+Constructor will not have any return-type
+
+Constructor name starts with upper-camel case
+
+Constructor used to initialize class objects
+
+******Constructor is an alternative to setter method, 
+no need to create setter method if we create constructors. (in some projects people don't want to see setter methods)
+
+Example:
+
+class A{
+
+A(){
+
+}
+
+}
+------------------------------------------------------
+
+What is method overloading?
+
+ when two or more methods in same name but different parameter-list is called as "Method overloading"
+
+***Different Parameter-list****
+
+1. Either # of parameters should be different
+2. or Data types of parameters should be different
+
+
+Example:
+
+void add (int a,int b){ //1
+
+} 
+
+void add (int a,int b,int c){ //2
+
+} 
+
+void add (double x,double y){ //3
+
+} 
+
+int add (double z,double w){ //4
+
+} 
+
+1,2,3 are overloaded but 4 is not. compiler will throw error because method type should be same in order to satisfy overloading.
+
+-------------------------------------------
+
+what is constructor overloading?
+
+two or more constructors written with same name with different parameters
+
+------------------------------------------------
+
+
+
+
+
+---------------------------------------
+
+//STEP 1
+
+
+class Student{
+  //global vaariables to student class
+  private int studentId;
+  private String studentName;
+
+//SETTER METHODS--------------------------
+
+ public  void setStudentId(int id){
+  
+     if (id > 0){
+     this.studentId = id;
+
+     }
+     else{
+        throw EXCEPTION // THIS WILL RUN WHEN USER INPUT >= -1 VALUES
+       }
+  }
+
+ public void setStudentName(String name){
+
+     if(name ! = null){
+     this.studentName = name;
+	}
+  }
+
+//GETTER METHOD----------------
+
+ public int getStudentId(){
+
+	return this.studentId;
+}
+
+public String getStudentName(){
+	
+      return this.studentName;
+}
+
+}// End of Student class
+
+ //Start of main class
+class EncapsualtionDemo{
+
+public static void main(String[] args){
+
+ Student s1 = new Student();
+
+ //Setting values using setter
+
+s1.setStudentId(1);
+s1.setStudentName("Sachini");
+
+System.out.println(s1.setStudentId());
+System.out.println(s1.setStudentName());
+
+
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
