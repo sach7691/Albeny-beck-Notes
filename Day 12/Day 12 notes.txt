@@ -1,0 +1,64 @@
+use constructors to initialized at the first stage of creating objects. which you cannot change the values later on in the program
+
+setters used when you need to change aruguments in anytime in the code.
+
+----------------------------------------
+Garbage Collector will take care of internal remove of objects (see the pic in this folder how a3 = 200 will be unlinked)
+
+java has GC where as c++ and C we have to take care of object remove from heap.
+
+-----------------------------------------------
+
+What is an Inheritance?
+
+A process of creating new class from an existing class.
+
+Here, new class is called as "sub-class/derived class/child class".
+
+where as an existing class "Super class/base class/parent class".
+
+-----------------------------------------------
+
+In OOP classes can have two types of asscoiations/relationships?
+
+1. Is-a relationship - Inheritance
+
+2. Has-a relationship - Aggregation/Composition
+
+example:
+
+class Address{
+
+}
+
+ class Employee{
+
+     int empId;
+     String empName;
+
+     Address address; // Has-a relationship
+}
+
+//Manager is an Employee
+class Manager extends Employee{ // Is-a relationship
+
+}
+
+-----------------------------------------------
+
+Can child class inherits the parent class private variables?
+
+No. but by using parent class constructor you can invoke them.
+
+ex. super(empId,empName);
+---------------------------------------------
+
+****Inheritance is always from parent to child
+
+---------------------------------------------
+If there is no method in child class then main method will look at the parent class for that method.
+
+Manager getDetails() deleted, so main will look at getDetails() in parent class.
+
+
+

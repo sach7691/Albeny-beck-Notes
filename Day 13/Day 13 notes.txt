@@ -1,0 +1,192 @@
+What is an Abstraction?
+
+
+A process of creating a generalized class with some common features/fields that can be inherited by specialized classes.
+
+lots of advance java follows abstraction
+
+-------------------------------------------------------------------------------------------------------------------
+
+Why Abstraction?
+
+If method overriding is compaulsory/obvious, then there is no point to write method in super class with complete implementation.  
+
+Declare speak()/sound() methods as abstract it means do not implement them completely.
+
+*****use abstarct method and implement your own version of it in the child class.
+
+Abstarct method has no body in the super class.
+
+Private methods cannot be overridden. only public and protected methods can be overridden.
+
+------------------------------------------------------------------------------------------------------------------
+
+Private methods can be exist, they can access with in the class only.
+
+Private and Protected class cannot be exist.
+----------------------------------------------------------------------------------------------------------------
+What is abstract class?
+
+An abstrct class has one or more abstract methods.
+
+A class which is not fully implemented.
+
+An abstract can defined common specification (method signature ex:sound()/declaration) without curly braces, so that sub-classes can override/implement the specification as per there requirement.
+
+Abstarct classes cannot be instantiated (we cannot create object from abstract class).
+
+A class can extends an abstarct class and override/implement abstract methods of its super-class.
+
+-----------------------------------------------------------------------------------------------------------------
+In the main method; -------------------------------(1)
+
+        //Animal a1 = new Animal();//cannot create object from super class
+
+        Dog d1 = new Dog();
+        d1.sound();
+
+        Cat c1 = new Cat();
+        c1.sound();
+
+
+------------------------------------------------------------------------------------------------------
+Polymophisam: This will utilize the memory. because no need to create objects sperately for each sub-class as in (1)
+
+
+  //A super-class reference can refer to all of its subclass objects
+        Animal ref = new Dog();
+        ref.sound();
+
+        ref = new Cat();
+        ref.sound();
+
+
+-------------------------------------------------------------------------------------------------------
+Main{
+         soundLikeAnimal(new Dog());
+        soundLikeAnimal(new Cat());
+
+        soundLikeAnimal(ref); // gives the latest ref value which is "Meow"
+
+    }
+
+
+ /////////////////////////Methods///////////////////////////
+        //just wasting memory
+        public static void soundLikeDog(Dog d) {
+
+            d.sound();
+            
+        }
+         //just wasting memory
+        public static void soundLikeCat(Cat c) {
+
+            c.sound();
+            
+        }
+
+        //polymophisam (we can write both behaviours in a function)
+        public static void soundLikeAnimal(Animal a) {
+
+            a.sound();
+            
+        }
+
+// we cannot create object from abstract class ---> soundLikeAnimal(new Animal()) -->not posible
+
+------------------------------------------------------------------------
+
+Can we declare variables in abstract class?
+
+Abstract class can have variables
+------------------------------------------------------------
+
+Can we declare constructors in abstract classes?
+
+Abstarct can have constructors which can be called from sub-classes
+------------------------------------------------------------
+Can we write methods with body (fully implemented methods) in abstarct class?
+
+Yes: abstarct class can have both abstarct (no method body/partially implemented calss) and concrete methods (method with body)
+--------------------------------------------------------
+
+Can we declare a class as abstarct if it has no abstract methods?
+
+Yes: To prevent instansiation (creating objects) / save memory of being created the objects
+
+if a class extends an abstract class, then the class has to override/implement all abstarct methods otherwise class itself become abstract.( sub-class become Abstarct through inheritance)
+
+----------------------------------------------------------
+
+What is the super class for all Java Classes?
+
+Yes: That is Object
+
+-------------------------------------------------------
+
+//Polymophisam Means many forms where a single reference can be used for multiple purposes
+
+Example: + operator is a single operator which can be used for addition and concatanation in java programming. 
+A super class reference can refer to all of it sub-class objects.
+
+Polymophisam is a way to write less code which can do multiple jobs.
+
+In the main method; 
+
+Method overriding leads to Polymophisam.
+
+---------------------------------------------------------------------
+
+What is the difference between method overriding and overloading?
+
+overloading: Happens in same class where methods have same name with different parameters
+
+Class A{
+
+public void print(int a){
+
+}
+public void print(String name){
+
+}
+
+}
+
+
+
+----------------------------------
+
+overriding: is a concept implemented in different sub-class where methods exist with same name and same parameters but different behaviour inside.
+
+class ElectronicDevice{
+
+
+       public abstarct void turnOn();
+       public abstarct void turnOff();
+
+class MobilePhone extends ElectronicDevice{
+	@Override
+      public abstarct void turnOn(){
+
+       }
+}
+
+class Tv extends ElectronicDevice{
+	
+      @Override
+      public abstarct void turnOn(){
+
+      }
+
+}
+
+
+
+
+
+}
+
+
+
+
+ 

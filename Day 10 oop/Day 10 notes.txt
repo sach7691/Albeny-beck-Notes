@@ -131,7 +131,20 @@ This is the Java classical method to take input, Introduced in JDK1.0. This meth
 
 To read other types, we use functions like Integer.parseInt(), Double.parseDouble(). To read multiple values, we use split().
 
+Buffer reader accept strings and store strings
+Size - 4KB
+Good for multithreading env. hence synchronous
+------------------------------------------------------------------------------------------------------------------------
+
 2. Using Scanner Class
 
  This is probably the most preferred method to take input. The main purpose of the Scanner class is to parse primitive types and strings using regular expressions, however, it is also can be used to read input from the user in the command line. 
+
+sacnner accept int,double,char anything and store as strings
+
+Good for single threded env. hence not synchronous
+
+size - 1KB
+
+at the end we have to close the scanner to prevent resource lekage 
 
