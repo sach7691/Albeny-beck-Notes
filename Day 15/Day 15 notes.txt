@@ -1,0 +1,282 @@
+toString ()
+
+****Super class of the each class is Object class. using toString (), we can overriding the toString () method body in object class.
+
+
+ex: 
+
+class A{
+
+//no extend keyword but by default its super class is object class
+
+}
+
+The toString() method returns the String representation of the object.
+
+For each class by default toString is a default method which we can use to return all the variables.
+
+System.out.printlin(r1) --(1) // this will refer to toString() method by default same as (2)
+
+System.out.printlin(r1.toString()) --(2)
+
+//if toString is not specified in the class,System.out.printlin(r1) return hashcode values of an object --> A@1fee6fc
+
+//Error
+@Override 
+public String toString(){
+ return this.x; // x is int value, toString() throw errors because it returns String values
+
+}
+
+//Correct
+@Override //better practise to use annnotation to understand overriden, or compiler alert you if any mistake happens
+public String toString(){
+ return "X value is :" + this.x; // x is int value so first we have to pass the string " x value is :" along with this.x concatanate with that. which make whole return value String
+}
+
+
+
+------------------------------------------------------------------------------------------------
+
+
+What is an Array in Java?
+
+A list of content of same type
+
+A collection of similar data types / data items
+
+A fixed-length array
+
+
+Example: 
+int[] scores = {1,2,3,4};
+
+//create an array
+String name = new String[4]
+
+//How to store values in an array : using index
+name[0] = "Sachini"   
+
+//How to print array value
+System.out.println(name[0]);
+
+//How to print whole array
+
+for(int i = 0 ; i < name.length ; i++){
+
+  System.out.println(name[i]);
+
+}
+ or
+
+for(String na: name){
+  
+System.out.println(na);
+
+}
+
+
+
+
+NOTE: Arrays are objects in Java and they always have default values based on their data types.
+
+All class types will have default value "null"
+
+
+//Recall:
+int x;
+
+System.out.println(x) // error because x has to initalized with a value.
+-------------------------------------------------------------------------
+
+Drawback of Arrays
+
+Fixed- length - if data expands you have to keep on changing array size
+
+Possible loss of memory - if we use only 2 indexes in an array we cannot shrink the unused free spaces
+
+------------------------------------------------------------------------
+What is a Java Collection/Collection Framework?
+
+Collection of Objects: Java Collection can store only objects,where as array holds any other data type items.
+
+Java Collection Framework : is based on list of interfaces and their implementation classes
+
+-------------------------------------------------------------------------
+List of interfaces
+
+1. List : Focuses on index allows to duplicates
+
+    store A,B,A,C,D (A is a duplicate value, no overwritten because of index value)
+
+Ordered collection
+
+2. Set : Focuses on hashing (hashcode) and avoids duplicates (embraces unique values)
+
+set is unordered collection
+  
+example: A,B,A,C,D - 65,66,65,67,68
+
+just omit duplicates : B,A,C,D (unordered)
+
+
+3. Map : Represents a dictionary which contains KEY and VALUE
+
+KEY-VALUE pairs are maintained in Map Category
+
+Example: 
+
+Phone Book
+
+Name (KEY) : Phone Number (VALUE)
+
+Sachini - 0112708168
+Sachini - 0112709414 (key has to be unique,programming system will replace the value this key)
+Sasika - 0712096086
+sasika -0112709414 (value can be duplicated)
+
+ ---------------------------------------------
+
+Implementation classes of List,Set and Map interfaces
+
+
+1. List: 
+
+* ArrayList : 
+Daynamically growable array
+Index based collection (Duplicate values can be store)
+Most suitable for READ operations
+Not Suitable for WRITE operation (WRITE basically reduce the performance in any area)
+-Complexity : Big O(1)
+    
+
+*LinkedList : It is a node-based collection  where each node will have address of adjacent nodes
+
+-Suitable for more ADD operation
+-Not suitable for READ operation - because read operations are sequential
+
+-Complexity : Big O(n) // has to start read from the begining
+
+* Vector : Similar to ArrayList, but vector is synchronized (Thread -safe)
+
+----------------------------------------------
+
+
+All standard Java Collection classes and interfaces are defined in a package called "java.util"
+
+***you can refer sub class method comming under super class : which is polymophisam 
+
+ex: refer data types coming under object class 
+
+------------------------------------------------
+
+Any word start with upper-case :
+
+1. Class
+2.Annotation
+3.Interface
+
+integer used instaed of int, because Interger is an object type
+
+----------------------------------------------
+
+An Iterator is an object that can be used to loop through collections, like ArrayList and HashSet. It is called an "iterator" because "iterating" is the technical term for looping.
+
+------------------------------------------------
+
+What are generics in java?
+
+Generics provides type-safty and avoid explict type casting 
+
+Generics represents by <T>
+
+Examples: 
+ArrayList<String> names = new ArrayList<String>();
+
+ArrayList<Student> students = new ArrayList<Student>();
+
+
+we can have Dog,Cat,Rabbit object ArrayLists, instead of creating different arrayList,create animal as follows
+
+ArrayList<Animal> animals = new ArrayList<Animal>();
+
+System.out.println(animals);
+
+
+--------------------------------------------------
+ArrayList<Book> list = new ArrayList<Book>();
+    
+     Book b1 = new Book("Oliver Twist","Charles",500);
+     Book b2 = new Book("King Richard","William",1000);
+     Book b3 = new Book("white fang","jack",560);
+
+
+     list.add(b1);
+     list.add(b2);
+     list.add(b3);
+
+
+
+ //Printing list using println
+     System.out.println(list); //You should override toString() method
+
+   //Printing list using foreach loop
+    for(Book bk : list){
+
+        System.out.println(bk);
+    }
+
+
+    //Print list using iterator
+
+    Iterator<Book> it = list.iterator();
+
+    while (it.hasNext()){
+
+        System.out.println(it.next());
+
+    }
+
+
+
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

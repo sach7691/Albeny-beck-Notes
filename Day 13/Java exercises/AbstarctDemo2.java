@@ -4,6 +4,7 @@
 //MULTI-LEVEL INHERITANCE
 abstract class Person{
 
+    //Abstarction is a process of creating generalized class with some common features and they are inherited by the cpecialized classes
     public abstract void designSpec();
     public abstract void developCode();
     public abstract void testCode();
@@ -21,6 +22,8 @@ abstract class BA extends Person{
 
     }
 
+    // 4 abstract methods
+
     // public abstract void developCode();
     // public abstract void testCode();
     // public abstract void releseCode();
@@ -34,6 +37,7 @@ abstract class Developer extends BA{
  public void developCode(){
 
  }
+     // 3 abstract methods
     // public abstract void testCode();
     // public abstract void releseCode();
     // public abstract void maintainCode();
@@ -46,6 +50,8 @@ abstract class Tester extends Developer{
     public void testCode(){
 
     }
+
+    // 2 abstract methods
     // public abstract void releseCode();
     // public abstract void maintainCode();
 
@@ -57,7 +63,7 @@ abstract class DevOps extends Tester{
     public  void releseCode(){
 
     }
-
+    // 1 abstract methods
     // public abstract void maintainCode();
 
 
@@ -67,6 +73,8 @@ class ProdSupport extends DevOps{
     public void maintainCode(){
 
     }
+
+    // No abstract methods
 
 }
 

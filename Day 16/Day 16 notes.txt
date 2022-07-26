@@ -1,0 +1,112 @@
+Why the main () method in Java is always static? 
+
+Java main() method is always static, so that compiler can call it without the creation of an object or before the creation of an object of the class.
+
+In any Java program, the main() method is the starting point from where compiler starts program execution.
+
+-------------------------------------------------------------------------------
+
+If a class has zero constructors (not written by programmers), then the compiler provides a constructor which takes no parameters.
+
+ex: 
+
+public class Student{
+
+
+}
+
+Compile the code : javac Student.java
+internally looks like follows
+
+public class Student{
+
+public Student(){
+
+
+}
+
+
+}
+
+
+NOTE:
+Without the constructor, object creation is implossible.
+The main responsiblity of constructor is create objects.but if you don't have it compiler will create a default constructor for you.
+
+------------------------------------------------------------------------------------
+
+ArrayList<Employee> list = new ArrayList<>(); //Empty angle brackets are called as "Type-Inference Diamond"
+
+Type-Inference Diamond : always written on the right-hand side
+
+----------------------------------------------------------------------------------------
+
+Enhanced-for loop structure
+
+for(Data-type reference/variable : Collection /array name)
+
+-------------------------------------------------------------------------------------
+
+ //Fetch an object from a collection/arraylist
+    System.out.println(list.get(0)); //list is an array name,0 is the index
+
+    //Display all objects in the collection
+    System.out.println(list);
+
+    //Add a new object at a specified index
+    list.add(1,e1); //method overloading add() takes different parameters (earlier it took just the object now it takes index and parameter)
+
+//modify the content in the object
+    e1.setEmployeeName("Roledene"); //call the setter method
+
+//setters with one parameter because in order to change only one value, no need to pass everything in the object (unnessary overhead)
+
+---------------------------------------------------------------------------------------
+
+List of implementation Classes of Set interface
+
+1. HashSet : Unordered collection focuses on hasing and avoid duplicates
+
+ex: C,D,A,E : we don't bother in which oreder this stream will come out
+
+2. LinkedHashSet : Maintain objects based on insertion order and avoid duplicates
+
+ex: A,C,D,A,E : this should come out C,D,A,E (Duplicate A has avoided)
+
+3. TreeSet : It is an interface which implemets SortedSet (A sub-type of Set interface)
+
+      Orders the items in natural order procedure (Ascending order)
+
+------------------------------------------------------------------------------------
+
+List of implementation Classes of Map interface
+
+1. HashMap : Same as HashSet but it maintains KEY-VALUE pairs (unordered)
+
+2. LinkedHashMap : Same as LinkedHashSet but maintain KEY-VALUE pairs (ordered based on insertion order)
+
+3. TreeMap : Same as TreeSet (items are sorted based on only key objects)
+
+4. Hashtable: Leagecy class which is unordered, maintain unique keys but synchronized (thread -safe)
+
+1,2,3 are not thread safe and synchronized
+
+-----------------------------------------------------------------------------------
+Research :
+
+1. Stacks : A data Structure which maintains stack of objects
+
+operations: Push,Pop
+
+Approach : LIFO (Last -in-first-out)
+
+2. Queue: A data Structure which maintains items based on FCFS
+
+operations: Add,Remove
+ 
+
+3. Dequeu : Double-ended queue allows the codes to add/remove items from both ends (Front and Rear)
+
+--------------------------------------------------------------------------------------
+
+Look at all the programs and understand

@@ -1,0 +1,368 @@
+What is an interface?
+
+Represents a pure-abstarct class.
+
+this cannot have constructors and any concrete methods.
+
+Java interface can have only abstarct methods (prior to Java 8)
+
+Research:
+
+you cannot have a constructor within an interface in Java. You can have only public, static, final variables and, public, abstract, methods as of Java7. 
+From Java8 onwards interfaces allow default methods and static methods
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+The reason why the Java 8 release included default methods is pretty obvious.
+
+In a typical design based on abstractions, where an interface has one or multiple implementations, if one or more methods are added to the interface, all the implementations will be forced to implement them too. Otherwise, the design will just break down.
+
+Default interface methods are an efficient way to deal with this issue. They allow us to add new methods to an interface that are automatically available in the implementations. Therefore, we don't need to modify the implementing classes.
+
+In this way, backward compatibility is neatly preserved without having to refactor the implementers.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+A specification of method signatures
+
+Method (in abstract method) signature indicates method delcaration which reveals 
+-->access specifiers 
+-->return types
+-->Name of the method
+-->Paranthesis () inside that parameters
+
+Example:
+
+In an interface we don't write "abstract" keyword infront of method as in abstract class.
+
+Still we called this as abstarct method in an interface.
+
+interface MathOperation{
+
+public int add(int a,int b);
+public int sub(int a,int b);
+
+}
+
+//But it is no harm if you put abstract too
+
+interface MathOperation{
+
+public abstract int add(int a,int b);
+public abstract int sub(int a,int b);
+
+}
+
+---------------------------------------------
+Can a class extend an interface?
+
+No. Class simply iplements an interface.
+
+
+ex:
+
+class SacientificCal implements MathOperation{
+
+    //implement all abstarct class by eleminating abstact keyword 
+
+      public int add(int a,int b){
+
+      }
+      public int sub(int a,int b){
+
+	}
+
+}
+
+class StandardCalc implemets MathOperation{
+
+
+     public int add(int a,int b){
+
+      }
+      public int sub(int a,int b){
+
+	}
+
+
+}
+
+-------------------------------------------------------
+
+
+interface CloudServices{
+
+//here not written abstract keyword since it is not compulasory
+
+     public void createServer(); 
+     public void Creates3Bucket();
+
+}
+
+class Azure implements CloudServices{
+
+     public void createServer(){
+
+     }
+     public void Creates3Bucket(){
+
+     }
+
+}
+class AWS implements CloudServices{
+
+     public void createServer(){
+
+     }
+     public void Creates3Bucket(){
+
+     }
+
+}
+
+NOTE: Interfaces allow us to write a common specification/outline of methods that can be implemented by various implementation providers
+
+------------------------------------------------------
+Can we declare variables in a java interface?
+
+Yes: The interface variables are public,static and final (constant)
+
+----------------------------------------------------
+
+Can a class extends more than one class at a time?
+
+No: There is no multiple inheritance in java
+
+Python supports multiple inheritance,but java does not
+
+---------------------------------------------------
+
+Can a class implement more than one interface at a time?
+
+Yes: 
+
+ex:
+
+interface A{
+
+}
+
+interface B{
+
+}
+
+class Impl implemets A,B{ //This is valid
+
+
+}
+
+---------------------------------------------------
+
+Can java interface extend another interfaces?
+
+interface A{
+
+}
+
+interface B extends A{
+
+}
+
+class Impl implemets B{ 
+
+ // this class has to implement methods of both A and B interfaces
+}
+
+----------------------------------------------------
+
+Can a java interface extends more than one interface at all?
+
+
+Yes: An interface can extends multiple interfaces in java
+
+
+interface A{
+
+}
+interface B{
+
+}
+interface C extends A,B{
+
+}
+
+------------------------------------------------
+
+Note: If it class to class --------> extend
+      If it interface to interface --------> extend
+      If it class to interface  -------->Implemets
+
+-----------------------------------------------
+
+Note: A class can extend another class and implement one of more interface at time.
+
+
+Example:
+
+class Item{
+
+
+}
+
+interface Printable{
+
+}
+
+interface Returnable{
+
+}
+
+class shirt extends Item implements Printable,Returnable{
+
+
+}  
+
+------------------------------------------------ 
+
+NOTE:
+ //This is invaild, because first have to extend then implemets
+class shirt implements Printable extends Item {
+
+
+} 
+
+-------------------------------------------------
+
+NOTE: Java Source file cannot have more than one public class.
+
+
+-------------------------------------------------
+Static an Non-Static:
+
+//Static used as shared variable, it will not change until we make it change.
+
+Class A{
+
+    int x; //non-static
+    static int y; //static
+    static final z =100; //static final (no one can change this value in the main program)
+
+}
+
+class Test{
+
+ main(){
+
+
+    A a1 = new A();
+
+    A a2 = new A();
+
+    a1.x =1000;
+
+    System.out.println(a1.x); //1000
+    System.out.println(a1.x); //0
+
+    a1.y = 2000;
+    System.out.println(a1.y); //2000
+    System.out.println(a1.y); //2000
+
+    a2.y = 3000; // this line will change the static y from 2000 to 3000
+    System.out.println(a2.y); //3000
+    System.out.println(a2.y); //3000
+    
+    }
+
+}
+
+--------------------------------------------------
+
+What is a static varibale?
+
+Static variable is a shared varibale/ global variable across all references, because they are not bounded with objects/instatnce, it is bounded with class variables
+
+Static variables are also known as class variables
+
+*****static varibales can be accessed without creating objects
+
+ex: if you use static methods, you can just use the method name without creating an object. 
+
+Remember: ProcessCalc(Sci);
+
+These variables are accessed using class name
+ex: A.y = 300; //this saves memory
+
+---------------------------------------------------
+
+Why main method is static? 
+
+Java main() method is always static, so that compiler can call it without the creation of an object or before the creation of an object of the class.
+
+In any Java program, the main() method is the starting point from where compiler starts program execution
+While instantiating it has to call the constructor of that class, There will be ambiguity if the constructor of that class takes an argument.
+
+The main() method in Java must be declared public, static and void. If any of these are missing, the Java program will compile but a runtime error will be thrown.
+
+--------------------------------------------------------------------------------------------------------------
+If the main() is allowed to be non-static, then while calling the main() method JVM has to instantiate its class.
+
+class Book {
+   public void getBookInfo() { //non-static method
+      System.out.println("Welcome");
+   }
+}
+
+
+public class Test {
+   public void main(String[] args) { //non-static main
+      
+      Test t = new Test(); //instantiate of the Test class/ JVM has to create an object 
+      t.getBookInfo();
+
+   }
+}
+
+----------------------------------------------------------------------------------------------
+*****Static method of a class can be called by using the class name only without creating an object of a class.
+
+ex:
+
+class Book {
+   public static void getBookInfo() { //static method
+      System.out.println("Welcome");
+   }
+}
+public class Test {
+   public static void main(String[] args) {
+      //Call static method of Book class using class name only
+      Book.getBookInfo();
+   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
