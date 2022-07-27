@@ -51,7 +51,7 @@ for(Data-type reference/variable : Collection /array name)
     System.out.println(list.get(0)); //list is an array name,0 is the index
 
     //Display all objects in the collection
-    System.out.println(list);
+    System.out.println(list); 
 
     //Add a new object at a specified index
     list.add(1,e1); //method overloading add() takes different parameters (earlier it took just the object now it takes index and parameter)

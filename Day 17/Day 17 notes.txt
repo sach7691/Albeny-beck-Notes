@@ -1,0 +1,215 @@
+Sorting: comparitor and compareable
+
+-----------------------------------------------------------------------
+
+What is an Exception?
+
+Java is Robust because of exception handling
+
+print(10/0) // gives infinite as output which should be handled
+
+It's a run-time error 
+
+NOTE: If JRE encounters any exception code in java it simply terminates the program execution and displays/returns an exception message stating the actual reason and some additional information.
+
+----------------------------------------------------------------
+Explain the clauses of exception handling in java?
+
+1.try : Program statements that are expected to throw/raise exception should be written in try block
+
+2.Catch : is responsible for catching the exception thrown by try  block. 
+
+NOTE: JRE throws exception implicitly.
+
+with catch block we can customized the error message
+
+
+3.throw : To throw exception manually we use "throw" clause
+
+4.throws : To indicate that a method may throw exception we use "throws" clause
+
+5.finally : This block executed regardless of exception state. i.e: finally block is always execulted if the exception is handled (caught) or not.
+
+we usually wriyte closing operations in this block
+
+------------------------------------------------------------
+
+Basic structure of exception handling in java?
+
+try{
+
+   int a = 10;
+   int b = 0;
+   if (b != 0){
+   System.out.println(a/b);
+}
+
+}
+catch(Exception Name refernceName){
+
+}
+finally{
+
+}
+
+------------------------------------------------------------
+
+
+NOTE: All Exceptions in java are classes not interfaces.
+
+---------------------------------------------------------
+
+int a = Interger.parseInt(args[0]); // parseInt is a static method in Integer class.
+
+String name; //name in String
+
+String[] args; //Array of Strings
+Parameter that accept command line arguments during the run-time
+
+----------------------------------------------------------------
+
+Java Multi-catch block
+
+A try block can be followed by one or more catch blocks.
+Each catch block must contain a different exception handler. So, if you have to perform different tasks at the occurrence of different exceptions, use java multi-catch block.
+
+
+---------------------------------------------------------
+
+
+NOTE:: exception class can hold all types of exception objects
+
+
+****This is called polymophisam, one class can ho;d many types of objects
+
+catch (Exception e ) { //exception class can hold all types of exception objects
+            
+    System.out.println(e); //shortcut to get the message
+        }
+
+-----------------------------------------------------
+
+Refer the Exception class hierarchy
+
+Runtime exception occur due to human error / under our control and we can correct them
+
+IO /ClassNotfound/SQL exc --> are resource based exceptions
+
+-----------------------------------------------------
+
+What is a stream?
+
+It is a flow of data (sequence of bytes) 
+
+What is an input stream ?
+
+A flow of data coming from an input device
+
+It is mainly used to read data
+
+What is an output stream?
+
+A flow of data goin from the program
+
+It is mainly used for writing
+
+Types of stream classes in Java
+
+------------------------------------------------------------
+
+Types of stream classes in Java?
+
+1. Byte stream classes : These classes do not support UNICODE
+
+This means we may not consider usimg this type in web application
+
+These classes always deal with sequence of bytes
+
+2. Character stream classes : These classes support UNICODE
+
+This means we consider usimg this type in web application
+
+These classes always deal with sequence of characters
+
+------------------------------------------------
+
+Byte stream class and their hierarchy
+
+		   Abstract
+        /                     \
+InputStream                    OutputStream
+================================================
+  THE BELOW CLASSES ARE CALLED "CONCRETE CLASSES"
+1.FileInputStream			1.FileOutputStream
+2.DataInputStream             2.DataOutputStream
+3.ObjectInputStream           3.ObjectOutputStream
+
+----------------------------------------------------------
+
+File handling is important when we need to create log files,csv files etc. otherwise we can use of database to this.
+
+
+
+-----------------------------------------------------------
+
+String Buffer
+
+A StringBuffer is a thread-safe, mutable sequence of characters.
+
+Unlike a String class (immutable), the StringBuffer class is mutable. That is, we can change the contents of a StringBuffer object.
+
+StringBuffer in java is used to create modifiable String objects. This means that we can use StringBuffer to append, reverse, replace, concatenate and manipulate Strings or sequence of characters.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
