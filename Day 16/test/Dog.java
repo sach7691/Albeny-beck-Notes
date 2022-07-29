@@ -18,11 +18,6 @@ public class Dog extends Animal{
         return "I walk as a Dog";
 
     }
-   
-
-
-
-
-
+    
 
 }

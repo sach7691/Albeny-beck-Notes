@@ -1,0 +1,113 @@
+ 
+	Character Stream classes and their hierarchy
+	========================================
+	
+						Abstract 
+					/				\
+	
+			Reader 		  		 		Writer	
+		===================================================
+			The below classes are called as "Concrete classes"
+		  |_ FileReader			|_ FileWriter
+		  |_ BufferedReader 	|_ BufferedWriter
+		  
+		  
+		  
+/*
+
+ Methods with "throws" clause 
+
+public void close() throws IOException{ 
+
+}
+
+
+public FileWriter(String fileName) throws IOException{
+
+}
+
+
+public void write(String data) throws IOException{
+
+
+}
+
+
+*/
+
+
+What is Serialization?
+
+A process of writing an object's state to a byte stream
+
+Process of storing class objects into a byte stream
+
+	To implement Serialization we need two classes 
+	
+		1) FileOutputStream 
+		
+		2) ObjectOutputStream
+		
+		
+		
+	NOTE:******** Only the objects of class that implements "Serializable" interface can be serialized
+	
+	
+
+What is a De-Serialization?
+
+A process of reading objects from a byte stream
+
+	To implement De-Serialization we need two classes 
+	
+	
+		1) FileInputStream 
+		
+		2) ObjectInputStream
+
+
+What is a marker/tag interface in Java?
+
+An interface defines no members (variables and methods) but it helps
+JVM/JRE to understand that this is a special interface
+	
+	Example:
+	
+		java.io.Serializable
+
+
+
+
+What is a transient variable/field?
+
+
+-> A transient field cannot be persisted/serialized
+
+
+
+
+What is a User-Defined Exception?
+
+This exception is also know as custom exception
+
+Steps involved:
+
+	1) Create a class by extending "Exception" class
+	
+	
+	2) Declare a String variable which can hold an exception message
+	
+	
+	3) Write a parameterized constructor
+	
+	
+	4) Override toString
+
+
+
+
+
+What is String in Java?
+
+-> String is an immutable class
+

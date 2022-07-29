@@ -30,7 +30,7 @@ public class ExcepDemo2{
             System.out.println(ne.getMessage()); //shortcut to get the message
         }
 
-        catch (Exception e ) { 
+        catch (Exception e ) { //exception class can hold all types of exception objects
             
             System.out.println(e); //shortcut to get the message
         }

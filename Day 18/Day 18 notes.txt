@@ -1,0 +1,123 @@
+Character Stream Classes and their hierarchy
+
+                     Abstarct
+
+      Reader                       Writer
+===============================================
+The below classes are called as "Concrete classes"
+1. FileReader                       1.FileWriter
+2. BufferReader				2.BufferedWriter
+
+---------------------------------------------------------------------
+Let's write a program to demonstrate character stream classes
+
+file should be closed() after using it. in order to avoid resource leakage.
+
+And also flush() : dispatch the everything
+
+these are not required in byte stream classes.
+-----------------------------------------------------------------------
+FileReader and BuffferedReader 
+
+If two classes are communicating with each other we need a bridge class : 
+ex : FileReader and BuffferedReader wants to communicate for that we need InputStreamReader as a bridging class.
+
+
+StringBuffer in java is used to create modifiable String objects. This means that we can use StringBuffer to append, reverse, replace, concatenate and manipulate Strings or sequence of characters.
+
+-----------------------------------------------------------------------
+
+What is Serialization?
+
+A process of writing an object's state to a byte stream
+
+Process of stroing class object into a byte stream
+
+To implement Serialization we need 2 classes............
+
+1. FileOutputStream
+2. ObjectOutputStream
+
+
+NOTE: Only the objects of class that implements "Serializable" interface can be serialized.
+
+
+What is a marker or tag interface in Java?
+
+An interface defines no varibales/members but it helps JRE to understand that this is a special interface
+
+example: Serializable is an interface that defined in java.io.Serializable
+-----------------------------------------------------------------------
+
+What is De-Serialization?
+
+A process of reading objects from a byte stream
+
+To implement De-Serialization we need 2 classes............
+
+1. FileInputStream
+2. ObjectInputStream 
+------------------------------------------------------------------------
+
+ois.readObject(); //returns super-type (which is object class)
+
+Employee e1 = (Employee)ois.readObject(); //need to type cast
+
+---------------------------------------------------------------
+
+What is Transient variable?
+
+Transient variable cannot be persisted/serialized.
+
+when you check de-serialized (reading) you see null in the password field.
+
+---------------------------------------------------------------------
+
+What is a User-defined Exception?
+
+This exception is also known as custom exception.
+
+Steps invoved:
+
+1. Create a class by extending "Exception" class
+
+2. Declare a String variable which can hold an exception message
+
+3. write a parameterized constructor
+
+4. Override toString()
+
+----------------------------------------------------------------------
+What is String in java?
+
+String is an immutable Class (Objects of String class cannot be changed)
+
+String s1 = "hello" //creating an String object (no need of new key word when it comes to String) if it assign "XX" which means creating a String object
+
+s1.toUpperCase(); //this will create another object which has "HELLO"
+
+when printing
+Print(s1) // this will print "hello" (Not in upper-case) because String is immutable,once delacred it is immutable
+
+-------------------------------
+
+String s1 = "hello";
+
+String s2 = new String("hello");
+
+print(s1 == s2) //false
+
+== : always check that s1 and s2 reference refering to same object, but not the holding content.
+
+s1, s2 is 2 different objects with same content.
+--------------------------------------------------
+
+String s1 = "hello"; //String Literal
+
+String s2 = "hello"; //String Literal
+
+print(s1 == s2) ; //true
+
+because same content is shared by 2 different objects, it uses the same object. (if right side = then leftside also =)
+Object created using String Literal is stored in String pool for future use.
+If a String Literal is repeated multiple times then java programming system searches for any String Literal (in string pool) that matches the new one and uses same object

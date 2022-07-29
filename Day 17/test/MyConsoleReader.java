@@ -30,8 +30,10 @@ public class MyConsoleReader{
 
      
     String str;
+
+    String sp = "stop";
     //While loop checks the cmd-line stop to terminate the append
-    while(!"stop".equals((str = br.readLine())) ){ 
+    while(!sp.equals((str = br.readLine())) ){ 
      
      //append start
      System.out.println("Enter a string to Append: ");

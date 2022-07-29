@@ -1,0 +1,26 @@
+// Program to demonstrate character stream classes
+// A java code to Create a new file and write some content
+import java.io.FileWriter;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+class FileWriterDemo2{
+
+	public static void main(String[] args) throws FileNotFoundException,IOException{
+			
+			FileWriter fw = new FileWriter("newfile2.txt");
+			
+			fw.write("Welcome to Character Stream classes");
+			
+			fw.flush();
+			
+			System.out.println("File created!");
+			
+			fw.close();
+			
+		
+	}
+
+
+}
+
+

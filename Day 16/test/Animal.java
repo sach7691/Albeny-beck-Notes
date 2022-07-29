@@ -1,6 +1,6 @@
 
 //Starting of Animal Class
-public abstract class Animal{
+public abstract class Animal implements Comparable<Animal>{
 
      private String animalName;
 
@@ -46,12 +46,34 @@ public abstract class Animal{
 
      }
 
+     
+
     //adding abstract methods
 
     public abstract String sayHello();
     public abstract String move(); 
 
+    //CompareTo method
+    @Override
+    public int compareTo(Animal animals){
 
+        if (this.getAnimalAge() == animals.getAnimalAge()){
+
+            return 0;
+        }
+     
+       else if(this.getAnimalAge() > animals.getAnimalAge()){
+
+            return 1;
+
+        }
+
+        else{
+
+            return -1;
+        }
+
+    }
 
 
 

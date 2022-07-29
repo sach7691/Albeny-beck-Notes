@@ -1,0 +1,85 @@
+import java.io.FileOutputStream;
+
+import java.io.ObjectOutputStream;
+
+import java.io.FileNotFoundException;
+
+import java.io.IOException;
+
+import java.io.Serializable;
+
+
+class Employee implements Serializable{
+	
+	private int employeeId;
+	
+	private String employeeName;
+	
+	private transient String password;
+	
+	
+	public Employee(int employeeId, String employeeName, String password){
+			
+		this.employeeId = employeeId;
+
+		this.employeeName = employeeName;
+		
+		this.password = password;
+	}
+	
+	@Override	
+	public String toString(){
+	
+	   return "Emp ID "+this.employeeId+" Emp Name "+this.employeeName+" Password "+this.password;
+		
+	}
+	
+
+}
+
+class SerializationDemo{
+	
+	
+	public static void main(String[] args){
+		
+	   //Create FileOutputStream object
+	   
+	   
+	   try{
+		   
+		   FileOutputStream os = new FileOutputStream("emp_object.dat");
+		   
+		   
+		   // Create an ObjectOutputStream by connecting FileOutputStream 
+		   
+		   
+		   ObjectOutputStream oos = new ObjectOutputStream(os);
+		   
+		   // Create an Object from Employee class
+		   
+		   Employee e1 = new Employee(1,"Tom","1234");
+		   
+		   
+		   // Write Employee object to byte stream using writeObject()
+		   
+		   
+		   oos.writeObject(e1);
+		   
+		   
+		   System.out.println("Object has been Serialiazed");
+	   
+	   
+	   }
+	   catch(FileNotFoundException e){
+		   
+		  System.out.println(e); 
+	   }
+	   catch(IOException e){
+		   
+		  System.out.println(e); 
+	   }
+	   
+		
+	}
+
+}
