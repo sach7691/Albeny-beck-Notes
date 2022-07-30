@@ -5,6 +5,7 @@ public class Attendees extends Events implements Actions{
     private String Address;
     private String PhoneNumber;
 
+
     //Constructor takes all the parameters
     public Attendees(int eventId,String eventName, String eventLocation,String eventTimeDate,int attendId,String attendName,String Address,String PhoneNumber){
 
@@ -50,12 +51,12 @@ public class Attendees extends Events implements Actions{
 
     }
 
-    public String setAddress(){
+    public String getAddress(){
 
         return this.Address;
     }
 
-    public String setPhoneNumber(){
+    public String getPhoneNumber(){
 
         return  this.PhoneNumber;
     }
@@ -64,7 +65,7 @@ public class Attendees extends Events implements Actions{
 
     public String toString(){
 
-        return "List of Attendees attending an event : " + super.toString()+ " , "+ this.attendId + " , " + this.attendName + " , " + this.Address + " , " + this.PhoneNumber;
+        return "Details of Attendees along with the Event : " + super.toString()+ " | Id "+ this.attendId + " | Name " + this.attendName + " | Address " + this.Address + " | Tel " + this.PhoneNumber;
     }
 
 

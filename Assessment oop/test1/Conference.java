@@ -109,7 +109,7 @@ public class Conference{
                 
                    }
                System.out.println();
-                System.out.println("=====================Print All List after Deletion an Event : ========================");
+                System.out.println("=====================Print All List after Deletion of an Event : ========================");
                 for(Events ev: list){
            
                     System.out.println(ev);
@@ -119,13 +119,13 @@ public class Conference{
         //Attendees Details
 
 
-         Events a1 = new Attendees(1, "IEEE", "SL", "27th October at 8 - 3 pm ", 1, "Sachini", "Finchley", "0718166920"); 
-         Events a2 = new Attendees(3, "Springer", "Australia", "21st August at 8 - 3 pm ",2,"Sasika","High Banet","0712096086");
-         Events a3 = new Attendees(4, "IEEE", "UK", "29th December at 8 - 3 pm ",3,"Roledene","Highgate","0779905952");
-         Events a4 = new Attendees(4, "IEEE", "UK", "29th December at 8 - 3 pm ",4,"Anu","Bank","077345672");
+        Attendees a1 = new Attendees(1, "IEEE", "SL", "27th October at 8 - 3 pm ", 1, "Sachini", "Finchley", "0718166920"); 
+        Attendees a2 = new Attendees(3, "Springer", "Australia", "21st August at 8 - 3 pm ",2,"Sasika","High Banet","0712096086");
+        Attendees a3 = new Attendees(4, "IEEE", "UK", "29th December at 8 - 3 pm ",3,"Roledene","Highgate","0779905952");
+        Attendees a4 = new Attendees(4, "IEEE", "UK", "29th December at 8 - 3 pm ",4,"Anu","Bank","077345672");
 
 
-         ArrayList<Events> alist = new ArrayList<>();
+         ArrayList<Attendees> alist = new ArrayList<>();
 
          alist.add(a1);
          alist.add(a2);
@@ -140,31 +140,111 @@ public class Conference{
          System.out.println("Enter an Event Id to list the Ateendees : ");
          int number4 = scanner.nextInt();
      
-         ListIterator<Events>  itr3 = alist.listIterator();
+         ListIterator<Attendees>  itr3 = alist.listIterator();
     
          while (itr3.hasNext()) {
 
-             Events eventAttend = itr3.next();
+            Attendees eventAttend = itr3.next();
 
              if(eventAttend.getEventId() == number4){
            
                 System.out.println(eventAttend.toString());
                }
-         
-
-         
-
-
 
          }
 
+         System.out.println();
+         System.out.println("===============Add an Attendee to an Event========================= ");
+         
+         ListIterator<Attendees>  itr4 = alist.listIterator();
+    
+          System.out.println("Enter an Attendee Id : ");
+          int number5 = scanner.nextInt();
+          System.out.println("Enter Attendee Name : ");
+          scanner.nextLine(); 
+          String aName = scanner.nextLine();
+          System.out.println("Enter Attendee Address : ");
+          String aAddress = scanner.nextLine();
+          System.out.println("Enter Phone Number : ");
+          String aPhone = scanner.nextLine();
+ 
+          System.out.println("Enter an Event Id : ");
+          int number6 = scanner.nextInt();
 
-        //  for(Events at : alist){
-     
-        //      System.out.println(at);
-     
-        //  }
+         
 
+             for(Events event1 : list){
+
+                if(event1.getEventId() == number6){
+             
+                    Attendees addAttendee1 = new Attendees(number6,event1.getEventName(), event1.getEventLocation(), event1.getEventTimeDate(), number5, aName, aAddress, aPhone);
+                    itr4.add(addAttendee1);
+                    break;
+                }
+                
+                }
+            
+
+             System.out.println();
+             System.out.println("=====================Print All List with Added Attendee : ========================");
+
+             for(Attendees at: alist){
+
+                System.out.println(at);
+        
+              }
+
+
+
+        System.out.println();
+        System.out.println("===============Delete an Attendee from an Event========================= ");
+
+            
+        System.out.println("Enter an Attendee Id : ");
+        int number7 = scanner.nextInt();
+        
+        ListIterator<Attendees>  itr5 = alist.listIterator();
+        
+        while (itr5.hasNext()) {
+            Attendees attendeeDelete = itr5.next();
+        
+            if(attendeeDelete.getAttendId() == number7){
+        
+                itr5.remove();
+               }
+             
+                }
+            System.out.println();
+             System.out.println("=====================Print All List after Deletion of an Attendee : ========================");
+             for(Attendees attDele: alist){
+        
+                 System.out.println(attDele);
+         
+                }
+
+
+            
+
+             
+
+           
+        
+         
+            
+
+        
+
+
+
+
+
+
+
+
+
+       
+         
+         
 
 
 
