@@ -117,7 +117,62 @@ public class Conference1{
 
 
 
-
+                   System.out.println();
+                   System.out.println("===============Add an Attendee to an Event========================= ");
+                   
+                  //  ListIterator<Attendees>  itr4 = alist.listIterator();
+              
+                  //      System.out.println("Enter an Attendee Id : ");
+                  //      int number5 = scanner.nextInt();
+          
+                  //      while (itr4.hasNext()) {
+                  //         Attendees a = itr4.next();
+          
+                       
+                  //         Boolean isAttendeeFound = false;
+                  //    //  for(Attendees al : alist ){
+           
+                  //      if(a.getAttendId() == number5){
+                       
+                  //       System.out.println("Attendee Already Exist !!");
+          
+                  //       isAttendeeFound =true;
+                  //       break;
+                  //      }
+                      
+                  //      }
+                  //      System.out.println("Enter Attendee Name : ");
+                  //      scanner.nextLine(); 
+                  //      String aName = scanner.nextLine();
+                  //      System.out.println("Enter Attendee Address : ");
+                  //      String aAddress = scanner.nextLine();
+                  //      System.out.println("Enter Phone Number : ");
+                  //      String aPhone = scanner.nextLine();
+           
+                  //      System.out.println("Enter an Event Id : ");
+                  //      int number6 = scanner.nextInt();
+          
+                  //        for(Events event1 : list){
+          
+                  //         if(event1.getEventId() == number6){
+                       
+                  //             Attendees addAttendee1 = new Attendees(number6,event1.getEventName(), event1.getEventLocation(), event1.getEventTimeDate(), number5, aName, aAddress, aPhone);
+                  //             itr4.add(addAttendee1);
+                  //             break;
+                  //         }
+                          
+                  //     }
+          
+                  //      System.out.println();
+                  //      System.out.println("=====================Print All List with Added Attendee : ========================");
+          
+                  //      for(Attendees at: alist){
+          
+                  //         System.out.println(at);
+                  
+                  //       }
+          
+          
 
 
 
