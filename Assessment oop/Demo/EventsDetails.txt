@@ -1,0 +1,4 @@
+1,IEEE,SL,27th October at 8 - 3 pm
+2,ACM,USA,20th November at 9 - 4 pm
+3,Springer,JPN,21st August at 8 - 3 pm
+4,Elsevier,UK,29th December at 8 - 3 pm

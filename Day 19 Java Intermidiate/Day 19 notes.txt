@@ -1,0 +1,139 @@
+What are inner classes in java?
+
+These classes are also known as nested classes or classes within a class
+
+------------------------------------------------------
+
+Types of inner classes in java
+
+1. Non-Static inner class
+2. Static inner class
+3. Anonymous inner class
+4. Local inner class  -rarely see this type
+
+
+NOTE: An inner class can access all members of its outer/enclosing class
+(including private members)
+
+example : 
+
+class Outer{
+
+private int x = 1000;
+
+  class Inner{ //non-Static inner class (because static key word is not there)// act as a helper class
+
+    private int y = 10;
+
+    public inner(){ //constructor inner class
+        
+     SOP(x); //same like accesssing private variables using public method(learnt in encapsulation)
+      
+    }
+
+   public void display(){ // you cannot access Inner class from an outer class
+        SOP(y);
+        //new Inner(); // you can access Inner class from an outer class using new inner()
+   }
+
+}
+
+}
+
+---------------------------------------------------------------------------------------
+
+Can we declare a class as static?
+
+Yes we can, only if the class is an inner class
+
+
+example: Map.Entry entry : Map is an interface, .Entry is an inner class
+
+
+class A{
+
+static int x =0;
+
+static class B{
+
+
+} 
+
+}
+
+main()
+{
+ A a1 = new A();
+ B b1 = new B(); //error we cannot create object from static class
+
+ A.x; // this is how we access static variable 
+
+ A.B a = new A.B(); // this is how we access static inner class.
+
+}
+-------------------------------------------------------------------------------------------
+
+class Outer{
+
+private int x = 1000;
+
+ public class Inner{ //non -Static inner class (because static key word is not there)// act as a helper class
+
+    public inner(){ 
+        
+     SOP(x);
+      
+    }
+
+}
+
+}
+
+class InnerDemo{
+
+ public static void main(String[] args){
+
+  //To create an object from non-static inner class first
+  //we need to create from outer class object
+
+    
+
+}
+}
+
+-----------------------------------------------------
+
+NOTE: Annonymous inner classes are used to implement interfaces locally (at the code block where we need the actual implementation of method)
+
+----------------------------------------------------
+What are the building blocks of a java method>
+
+1. Access Specifier
+2. return type
+3. method Name
+4. Parameter-list ()
+5. method body - {}
+
+java 8 introduced a concept call "Anonymous function/Lambda Expression/Function" which avoids using access 1,2,3 from above.
+
+-----------------------------------------------------
+
+Lambda Expression is represented by two token such as;
+
+1. Parameter-list
+2. Method body
+
+These tokens are seperated by using " -> "
+
+Example:
+
+(Parameter-list) -> {Method body}; //Lambda Expression looks like this
+
+-----------------------------------------------
+NOTE: Lambda function can be associated with only functional interfaces.
+---------------------------------------------
+What is a functional interface?
+
+An interface which defines one an only abstarct method
+
+Functinal interface can have one or more defulat and static methods)
