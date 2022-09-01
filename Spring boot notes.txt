@@ -1,0 +1,132 @@
+
+javax.sql.DataSource (DataSource object requires for Sql connection)
+
+
+@Configuration
+public class SpringConfig{
+
+@Bean
+public DataSource getDataSource1(){
+
+//code to connect oracle db
+}
+
+@Bean
+public DataSource getDataSource2(){
+
+//code to connect SQL db
+}
+
+
+@Bean
+public JDBCTemplate jdbcTemplate1(){
+
+return new JDBCTemplate(getDataSource1());
+}
+
+@Bean
+public JDBCTemplate jdbcTemplate2(){
+
+return new JDBCTemplate(getDataSource2());
+}
+
+}
+
+
+
+@Autowired
+private JdbcTemplate jdbcTemplate1; //no need of qulifier spring boot will identify by name of the bean definition
+
+@Autowired
+private JdbcTemplate jdbcTemplate2;
+
+
+@Repository --> DAO is the nearest layer for backend
+@Service --> Service layer
+@Component --> Model
+
+---------------------------------------------------------------------
+
+RowMapper(get a row and converted in to object) is an interface used in select command as the second parameter
+
+1. using overriding the method in the interface 
+2. using Anonymous inner class
+
+-------------------------------------------------------------------------
+
+Differentiate java beans and spring beans?
+
+Any Bean maintained by framework -->spring beans
+
+this will have private fields,
+no argument constructor (optional)
+class may have constructor with parameters - to support constructor injection
+class with setters and getters,
+maintained by framework spring
+have life-cycle methods (init and destroy)
+
+otherwise it refered as java beans --> used in views ex: remember evenlistner in butten click
+
+this will have private fields,
+no argument constructor(required),
+class with setters and getters,
+not maintained by any framework like spring
+
+----------------------------------------------------------------------------
+NOTE: Spring Framework itself acts as a Factory
+
+Spring Web MVC Application requirements
+
+1. We need to add a Mevan dependency called "spring-boot-starter-web" in pom.xml
+
+<dependency>
+<groupId>org.springframework.boot</groupId>
+<artifactId>spring-boot-starter-web</artifactId>
+</dependency>
+
+once we add above dependency in pom.xml spring boot will embed a Tomcat server as a part of the application
+
+2. we need to create/develop UD Controller with some mapping methods
+
+The controller in Spring are represented by class concept it means we need to create classes
+
+ex: 
+
+@Controller
+public class EmployeeController{
+
+}
+
+3. Views can be implemented by JSPs/HTML/Thymeleaf(Spring specific framework)
+
+4. If we choose JSPs as view then we need to add a couple of Mevan dependencies in pom.xml file
+
+<dependency>
+<groupId>org.apache.tomcat.embed</groupId>
+<artifactId>tomcat-embed-jasper</artifactId>
+</dependency>
+
+<dependency>
+<groupId>javax.servlet</groupId>
+<artifactId>jstl</artifactId>
+</dependency>
+
+5. Create a folder structure in src/main as below
+
+ src/main/webapp/WEB-INF/views
+
+Now we can store all JSPs inviews folder
+
+6. Add properties in "application.properties" file as below;
+
+spring.mvc.view.prefix=/WEB-INF/views/
+spring.mvc.view.suffix=.jsp
+
+these properties will help spring boot to locate JSP files as part of view
+
+
+
+
+
+
+
